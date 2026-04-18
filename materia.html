@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estudio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h2 id="nombreMateria"></h2>
+  <p>Tiempo restante: <span id="timer">30</span>s</p>
+
+  <div id="contenido"></div>
+
+  <script src="js/data.js"></script>
+  <script>
+    const id = localStorage.getItem("materia");
+    const materia = buscarMateria(id);
+
+    document.getElementById("nombreMateria").innerText = materia.nombre;
+    document.getElementById("contenido").innerText = materia.contenido;
+
+    let tiempo = 30;
+    const timer = document.getElementById("timer");
+
+    const intervalo = setInterval(() => {
+      tiempo--;
+      timer.innerText = tiempo;
+
+      if (tiempo <= 0) {
+        clearInterval(intervalo);
+        if (confirm("¿Comenzar preguntas?")) {
+          window.location.href = "quiz.html";
+        }
+      }
+    }, 1000);
+
+    function buscarMateria(id) {
+      for (let f in data) {
+        const m = data[f].find(x => x.id === id);
+        if (m) return m;
+      }
+    }
+  </script>
+
+</body>
+</html>
