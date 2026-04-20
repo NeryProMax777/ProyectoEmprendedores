@@ -2,45 +2,94 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Facultades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Asesorías ModuleByte</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="dashboard-body">
 
-  <nav>
+  <header class="topbar">
+  <div class="logo-mini">ModuleByte</div>
+
+  <nav class="nav">
     <div class="menu">
-      <span>Facultades</span>
-      <div class="dropdown">
-        <p onclick="cargarFacultad('fcfm')">FCFM</p>
-        <p onclick="cargarFacultad('fime')">FIME</p>
+      <button class="menu-btn" onclick="toggleDropdown()">Facultades</button>
+
+      <div class="dropdown" id="dropdownFacultades">
+        <p onclick="seleccionarFacultad('fcfm')">FCFM</p>
+        <p onclick="seleccionarFacultad('fime')">FIME</p>
       </div>
     </div>
   </nav>
+</header>
+  <main class="dashboard-container">
+    <section class="bienvenida-panel">
+      <h1 id="titulo-facultad">Selecciona una facultad</h1>
+      <p>Escoge una facultad para comenzar tu ruta de estudio.</p>
+    </section>
 
-  <h2 id="titulo">Selecciona una facultad</h2>
+    <section class="progreso-panel">
+      <div class="progreso-texto">
+        <span>Progreso general</span>
+        <span id="progreso-porcentaje">0%</span>
+      </div>
+      <div class="barra-progreso">
+        <div class="barra-relleno" id="barra-relleno"></div>
+      </div>
+    </section>
 
-  <div id="materias" class="cards"></div>
+    <section id="materias" class="materias-grid"></section>
+  </main>
 
   <script src="js/data.js"></script>
-  <script>
-    function cargarFacultad(facultad) {
-      const contenedor = document.getElementById("materias");
-      contenedor.innerHTML = "";
+<script>
+  function toggleDropdown() {
+    document.getElementById("dropdownFacultades").classList.toggle("show");
+  }
 
-      data[facultad].forEach(m => {
-        contenedor.innerHTML += `
-          <div class="card" onclick="abrirMateria('${m.id}')">
-            <h3>${m.nombre}</h3>
-          </div>
-        `;
-      });
-    }
+  function seleccionarFacultad(facultad) {
+    document.getElementById("dropdownFacultades").classList.remove("show");
+    cargarFacultad(facultad);
+  }
 
-    function abrirMateria(id) {
-      localStorage.setItem("materia", id);
-      window.location.href = "materia.html";
+  function cargarFacultad(facultad) {
+    const contenedor = document.getElementById("materias");
+    const titulo = document.getElementById("titulo-facultad");
+    const barra = document.getElementById("barra-relleno");
+    const porcentaje = document.getElementById("progreso-porcentaje");
+
+    contenedor.innerHTML = "";
+    titulo.textContent = "Facultad: " + facultad.toUpperCase();
+
+    const progreso = 25;
+    barra.style.width = progreso + "%";
+    porcentaje.textContent = progreso + "%";
+
+    data[facultad].forEach((m, index) => {
+      contenedor.innerHTML += `
+        <div class="materia-card" onclick="abrirMateria('${m.id}')">
+          <div class="materia-numero">Bloque ${index + 1}</div>
+          <h3>${m.nombre}</h3>
+          <p>Presiona para estudiar este bloque y avanzar en tu progreso.</p>
+        </div>
+      `;
+    });
+  }
+
+  function abrirMateria(id) {
+    localStorage.setItem("materia", id);
+    window.location.href = "materia.html";
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.querySelector(".menu");
+    const dropdown = document.getElementById("dropdownFacultades");
+
+    if (!menu.contains(e.target)) {
+      dropdown.classList.remove("show");
     }
-  </script>
+  });
+</script>
 
 </body>
 </html>

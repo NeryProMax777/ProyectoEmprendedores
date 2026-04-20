@@ -1,14 +1,23 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prepárate UANL</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="center">
+<body class="inicio-body">
 
-  <h1>Prepárate UANL</h1>
-  <button onclick="entrar()">Iniciar</button>
+  <div class="overlay"></div>
+
+  <main class="inicio-container">
+    <div class="logo-box">
+      <h1>Asesorías ModuleByte</h1>
+      <p class="subtitulo">
+        Prepárate para tu examen de ingreso a la UANL de forma interactiva
+      </p>
+      <button class="btn-iniciar" onclick="entrar()">Iniciar</button>
+    </div>
+  </main>
 
   <script>
     function entrar() {

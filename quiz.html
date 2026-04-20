@@ -2,18 +2,46 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Asesorías ModuleByte</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="quiz-body">
 
-  <h3>Vidas: <span id="vidas">3</span></h3>
-  <h2 id="pregunta"></h2>
+  <header class="quiz-topbar">
+    <div class="logo-mini">ModuleByte</div>
 
-  <div id="opciones"></div>
+    <div class="quiz-info">
+      <div class="vidas-box">
+        Vidas: <span id="vidas">3</span>
+      </div>
+      <div class="pregunta-numero">
+        Pregunta <span id="contadorPregunta">1</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+    <section class="quiz-panel">
+      <div class="quiz-card">
+        <p class="quiz-label">Modo evaluación</p>
+        <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
+        <div id="opciones" class="opciones-grid"></div>
+      </div>
+    </section>
+
+    <aside class="animacion-panel">
+      <div class="personaje-box">
+        <div class="personaje">
+          🏃
+        </div>
+        <h3>Estado del jugador</h3>
+        <p id="estadoJugador">Responde correctamente para avanzar.</p>
+      </div>
+    </aside>
+  </main>
 
   <script src="js/data.js"></script>
   <script src="js/quiz.js"></script>
-
 </body>
 </html>

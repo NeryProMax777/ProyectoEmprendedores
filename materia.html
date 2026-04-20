@@ -2,23 +2,70 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Estudio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio | Asesorías ModuleByte</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="materia-body">
 
-  <h2 id="nombreMateria"></h2>
-  <p>Tiempo restante: <span id="timer">30</span>s</p>
+  <header class="materia-topbar">
+    <div class="logo-mini">ModuleByte</div>
+    <button class="btn-volver" onclick="volverDashboard()">← Volver</button>
+  </header>
 
-  <div id="contenido"></div>
+  <main class="materia-container">
+
+    <section class="materia-header-card">
+      <div>
+        <p class="seccion-label">Ruta de estudio</p>
+        <h1 id="nombreMateria">Materia</h1>
+        <p class="materia-descripcion">
+          Lee con atención el contenido, repasa los conceptos y prepárate para responder el quiz.
+        </p>
+      </div>
+
+      <div class="timer-box">
+        <span class="timer-label">Tiempo restante</span>
+        <div class="timer-circle">
+          <span id="timer">30</span>
+          <small>s</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="temas-panel">
+      <h2>Temas del bloque</h2>
+      <div class="temas-grid">
+        <div class="tema-item activo">Tema 1</div>
+        <div class="tema-item">Tema 2</div>
+        <div class="tema-item">Tema 3</div>
+      </div>
+    </section>
+
+    <section class="contenido-panel">
+      <h2>Contenido de estudio</h2>
+      <div id="contenido" class="contenido-box"></div>
+    </section>
+
+    <section class="acciones-panel">
+      <button class="btn-secundario" onclick="agregarTiempo()">+ Más tiempo</button>
+      <button class="btn-principal" onclick="comenzarQuiz()">Comenzar preguntas</button>
+    </section>
+
+  </main>
 
   <script src="js/data.js"></script>
   <script>
     const id = localStorage.getItem("materia");
     const materia = buscarMateria(id);
 
-    document.getElementById("nombreMateria").innerText = materia.nombre;
-    document.getElementById("contenido").innerText = materia.contenido;
+    if (materia) {
+      document.getElementById("nombreMateria").innerText = materia.nombre;
+      document.getElementById("contenido").innerText = materia.contenido;
+    } else {
+      document.getElementById("nombreMateria").innerText = "Materia no encontrada";
+      document.getElementById("contenido").innerText = "No se encontró información para esta materia.";
+    }
 
     let tiempo = 30;
     const timer = document.getElementById("timer");
@@ -29,7 +76,8 @@
 
       if (tiempo <= 0) {
         clearInterval(intervalo);
-        if (confirm("¿Comenzar preguntas?")) {
+        const iniciar = confirm("Ya terminó tu tiempo de estudio. ¿Quieres comenzar las preguntas?");
+        if (iniciar) {
           window.location.href = "quiz.html";
         }
       }
@@ -40,6 +88,22 @@
         const m = data[f].find(x => x.id === id);
         if (m) return m;
       }
+    }
+
+    function agregarTiempo() {
+      tiempo += 15;
+      timer.innerText = tiempo;
+    }
+
+    function comenzarQuiz() {
+      const confirmar = confirm("¿Seguro que quieres comenzar las preguntas?");
+      if (confirmar) {
+        window.location.href = "quiz.html";
+      }
+    }
+
+    function volverDashboard() {
+      window.location.href = "dashboard.html";
     }
   </script>
 
