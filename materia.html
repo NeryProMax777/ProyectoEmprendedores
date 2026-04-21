@@ -20,92 +20,270 @@
         <p class="seccion-label">Ruta de estudio</p>
         <h1 id="nombreMateria">Materia</h1>
         <p class="materia-descripcion">
-          Lee con atención el contenido, repasa los conceptos y prepárate para responder el quiz.
+          Selecciona un tema para comenzar a estudiar. El temporizador iniciará cuando elijas un tema.
         </p>
       </div>
 
-      <div class="timer-box">
+      <div class="timer-box oculto" id="timerBox">
         <span class="timer-label">Tiempo restante</span>
         <div class="timer-circle">
-          <span id="timer">30</span>
+          <span id="timer">0</span>
           <small>s</small>
         </div>
       </div>
     </section>
 
     <section class="temas-panel">
-      <h2>Temas del bloque</h2>
-      <div class="temas-grid">
-        <div class="tema-item activo">Tema 1</div>
-        <div class="tema-item">Tema 2</div>
-        <div class="tema-item">Tema 3</div>
+      <div class="temas-header">
+        <h2>Temas del bloque</h2>
+        <div class="acciones-bloque">
+          <button class="btn-secundario" onclick="continuarTema()">Continuar donde me quedé</button>
+          <button class="btn-secundario" onclick="reiniciarBloque()">Reiniciar bloque</button>
+        </div>
       </div>
+
+      <div id="temasGrid" class="temas-grid"></div>
     </section>
 
     <section class="contenido-panel">
-      <h2>Contenido de estudio</h2>
-      <div id="contenido" class="contenido-box"></div>
+      <h2 id="tituloTemaActual">Contenido de estudio</h2>
+      <div id="contenido" class="contenido-box">
+        Selecciona un tema para comenzar.
+      </div>
     </section>
 
     <section class="acciones-panel">
-      <button class="btn-secundario" onclick="agregarTiempo()">+ Más tiempo</button>
-      <button class="btn-principal" onclick="comenzarQuiz()">Comenzar preguntas</button>
+      <button class="btn-secundario" onclick="agregarTiempo()" id="btnMasTiempo" disabled>+ Más tiempo</button>
+      <button class="btn-principal" onclick="comenzarQuiz()" id="btnQuiz" disabled>Comenzar preguntas</button>
     </section>
 
   </main>
 
   <script src="js/data.js"></script>
-  <script>
-    const id = localStorage.getItem("materia");
-    const materia = buscarMateria(id);
+<script>
+  const id = localStorage.getItem("materia");
+  const materia = buscarMateria(id);
 
-    if (materia) {
-      document.getElementById("nombreMateria").innerText = materia.nombre;
-      document.getElementById("contenido").innerText = materia.contenido;
-    } else {
-      document.getElementById("nombreMateria").innerText = "Materia no encontrada";
-      document.getElementById("contenido").innerText = "No se encontró información para esta materia.";
+  const nombreMateria = document.getElementById("nombreMateria");
+  const contenido = document.getElementById("contenido");
+  const temasGrid = document.getElementById("temasGrid");
+  const timer = document.getElementById("timer");
+  const timerBox = document.getElementById("timerBox");
+  const tituloTemaActual = document.getElementById("tituloTemaActual");
+  const btnMasTiempo = document.getElementById("btnMasTiempo");
+  const btnQuiz = document.getElementById("btnQuiz");
+
+  let tiempo = 0;
+  let intervalo = null;
+  let temaActual = null;
+
+  const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
+
+  if (materia) {
+    nombreMateria.innerText = materia.nombre;
+    renderTemas();
+    marcarTemasCompletados();
+  } else {
+    nombreMateria.innerText = "Materia no encontrada";
+    contenido.innerText = "No se encontró información para esta materia.";
+  }
+
+  function buscarMateria(id) {
+    for (let f in data) {
+      const m = data[f].find(x => x.id === id);
+      if (m) return m;
     }
+  }
 
-    let tiempo = 30;
-    const timer = document.getElementById("timer");
+  function renderTemas() {
+    temasGrid.innerHTML = "";
 
-    const intervalo = setInterval(() => {
+    materia.temas.forEach((tema, index) => {
+      temasGrid.innerHTML += `
+        <button class="tema-item-btn" id="temaBtn${index}" onclick="seleccionarTema(${index})">
+          ${tema.titulo}
+        </button>
+      `;
+    });
+  }
+
+  function seleccionarTema(index) {
+    clearInterval(intervalo);
+    limpiarTemaActivo();
+
+    temaActual = index;
+    const tema = materia.temas[index];
+
+    localStorage.setItem("temaActual", index);
+
+    document.getElementById(`temaBtn${index}`).classList.add("activo");
+    tituloTemaActual.innerText = tema.titulo;
+    contenido.innerText = tema.contenido;
+
+    tiempo = tema.tiempo || 30;
+    timer.innerText = tiempo;
+    timerBox.classList.remove("oculto");
+
+    btnMasTiempo.disabled = false;
+    btnQuiz.disabled = false;
+
+    guardarProgresoMateria();
+    iniciarTemporizador();
+  }
+
+  function iniciarTemporizador() {
+    clearInterval(intervalo);
+
+    intervalo = setInterval(() => {
       tiempo--;
       timer.innerText = tiempo;
 
+      guardarProgresoMateria();
+
       if (tiempo <= 0) {
         clearInterval(intervalo);
-        const iniciar = confirm("Ya terminó tu tiempo de estudio. ¿Quieres comenzar las preguntas?");
+        marcarTemaComoEstudiado(temaActual);
+
+        const iniciar = confirm("Terminaste este tema. ¿Quieres comenzar las preguntas?");
         if (iniciar) {
+          localStorage.setItem("temaActual", temaActual);
           window.location.href = "quiz.html";
         }
       }
     }, 1000);
+  }
 
-    function buscarMateria(id) {
-      for (let f in data) {
-        const m = data[f].find(x => x.id === id);
-        if (m) return m;
+  function agregarTiempo() {
+    if (temaActual === null) return;
+    tiempo += 15;
+    timer.innerText = tiempo;
+    guardarProgresoMateria();
+  }
+
+  function comenzarQuiz() {
+    if (temaActual === null) {
+      alert("Primero selecciona un tema.");
+      return;
+    }
+
+    localStorage.setItem("temaActual", temaActual);
+
+    const confirmar = confirm("¿Seguro que quieres comenzar las preguntas de este tema?");
+    if (confirmar) {
+      window.location.href = "quiz.html";
+    }
+  }
+
+  function guardarProgresoMateria() {
+    progresoMateria[id] = {
+      temaActual: temaActual,
+      tiempoRestante: tiempo,
+      temasEstudiados: progresoMateria[id]?.temasEstudiados || []
+    };
+
+    localStorage.setItem("progresoMateria", JSON.stringify(progresoMateria));
+  }
+
+  function continuarTema() {
+    const guardado = progresoMateria[id];
+
+    if (!guardado || guardado.temaActual === null || guardado.temaActual === undefined) {
+      alert("No hay progreso guardado en esta materia.");
+      return;
+    }
+
+    clearInterval(intervalo);
+    limpiarTemaActivo();
+
+    temaActual = guardado.temaActual;
+    const tema = materia.temas[temaActual];
+
+    localStorage.setItem("temaActual", temaActual);
+
+    tiempo = guardado.tiempoRestante ?? (tema.tiempo || 30);
+
+    document.getElementById(`temaBtn${temaActual}`).classList.add("activo");
+    tituloTemaActual.innerText = tema.titulo;
+    contenido.innerText = tema.contenido;
+
+    timer.innerText = tiempo;
+    timerBox.classList.remove("oculto");
+
+    btnMasTiempo.disabled = false;
+    btnQuiz.disabled = false;
+
+    iniciarTemporizador();
+  }
+
+  function reiniciarBloque() {
+    const confirmar = confirm("¿Seguro que quieres reiniciar todo este bloque?");
+    if (!confirmar) return;
+
+    clearInterval(intervalo);
+    temaActual = null;
+    tiempo = 0;
+
+    progresoMateria[id] = {
+      temaActual: null,
+      tiempoRestante: 0,
+      temasEstudiados: []
+    };
+
+    localStorage.setItem("progresoMateria", JSON.stringify(progresoMateria));
+    localStorage.removeItem("temaActual");
+
+    limpiarTemaActivo();
+    contenido.innerText = "Selecciona un tema para comenzar.";
+    tituloTemaActual.innerText = "Contenido de estudio";
+    timer.innerText = 0;
+    timerBox.classList.add("oculto");
+    btnMasTiempo.disabled = true;
+    btnQuiz.disabled = true;
+
+    const botones = document.querySelectorAll(".tema-item-btn");
+    botones.forEach(btn => btn.classList.remove("completado"));
+  }
+
+  function marcarTemaComoEstudiado(index) {
+    if (index === null) return;
+
+    if (!progresoMateria[id]) {
+      progresoMateria[id] = {
+        temaActual: null,
+        tiempoRestante: 0,
+        temasEstudiados: []
+      };
+    }
+
+    if (!progresoMateria[id].temasEstudiados.includes(index)) {
+      progresoMateria[id].temasEstudiados.push(index);
+    }
+
+    localStorage.setItem("progresoMateria", JSON.stringify(progresoMateria));
+    marcarTemasCompletados();
+  }
+
+  function marcarTemasCompletados() {
+    const guardado = progresoMateria[id];
+    const temasEstudiados = guardado?.temasEstudiados || [];
+
+    materia.temas.forEach((tema, index) => {
+      const btn = document.getElementById(`temaBtn${index}`);
+      if (btn && temasEstudiados.includes(index)) {
+        btn.classList.add("completado");
       }
-    }
+    });
+  }
 
-    function agregarTiempo() {
-      tiempo += 15;
-      timer.innerText = tiempo;
-    }
+  function limpiarTemaActivo() {
+    const botones = document.querySelectorAll(".tema-item-btn");
+    botones.forEach(btn => btn.classList.remove("activo"));
+  }
 
-    function comenzarQuiz() {
-      const confirmar = confirm("¿Seguro que quieres comenzar las preguntas?");
-      if (confirmar) {
-        window.location.href = "quiz.html";
-      }
-    }
-
-    function volverDashboard() {
-      window.location.href = "dashboard.html";
-    }
-  </script>
+  function volverDashboard() {
+    window.location.href = "dashboard.html";
+  }
+</script>
 
 </body>
 </html>

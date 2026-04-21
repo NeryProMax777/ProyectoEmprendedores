@@ -58,22 +58,37 @@
     const barra = document.getElementById("barra-relleno");
     const porcentaje = document.getElementById("progreso-porcentaje");
 
+    const progresoGuardado = JSON.parse(localStorage.getItem("progresoUANL")) || {};
+    const materiasFacultad = data[facultad] || [];
+
     contenedor.innerHTML = "";
     titulo.textContent = "Facultad: " + facultad.toUpperCase();
 
-    const progreso = 25;
-    barra.style.width = progreso + "%";
-    porcentaje.textContent = progreso + "%";
+    let completadas = 0;
 
-    data[facultad].forEach((m, index) => {
+    materiasFacultad.forEach((m, index) => {
+      const estaCompleta = progresoGuardado[m.id]?.completado === true;
+      if (estaCompleta) completadas++;
+
       contenedor.innerHTML += `
-        <div class="materia-card" onclick="abrirMateria('${m.id}')">
+        <div class="materia-card ${estaCompleta ? 'materia-completada' : ''}" onclick="abrirMateria('${m.id}')">
           <div class="materia-numero">Bloque ${index + 1}</div>
           <h3>${m.nombre}</h3>
-          <p>Presiona para estudiar este bloque y avanzar en tu progreso.</p>
+          <p>
+            ${estaCompleta 
+              ? 'Bloque completado. Puedes repasarlo cuando quieras.' 
+              : 'Presiona para estudiar este bloque y avanzar en tu progreso.'}
+          </p>
         </div>
       `;
     });
+
+    const progreso = materiasFacultad.length
+      ? Math.round((completadas / materiasFacultad.length) * 100)
+      : 0;
+
+    barra.style.width = progreso + "%";
+    porcentaje.textContent = progreso + "%";
   }
 
   function abrirMateria(id) {
