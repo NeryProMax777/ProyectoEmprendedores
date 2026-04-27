@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -13,15 +14,34 @@
     <div class="logo-box">
       <h1>Asesorías ModuleByte</h1>
       <p class="subtitulo">
-        Prepárate para tu examen de ingreso a la UANL de forma interactiva
+        Inicia sesión para continuar con tu ruta de estudio.
       </p>
-      <button class="btn-iniciar" onclick="entrar()">Iniciar</button>
+
+      <form class="login-form" onsubmit="iniciarSesion(event)">
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+
+        <p id="mensajeLogin" class="mensaje-login"></p>
+
+        <button class="btn-iniciar" type="submit">Iniciar sesión</button>
+      </form>
     </div>
   </main>
 
   <script>
-    function entrar() {
-      window.location.href = "dashboard.html";
+    function iniciarSesion(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+      const mensaje = document.getElementById("mensajeLogin");
+
+      if (usuario === "admin" && password === "1234") {
+        localStorage.setItem("usuarioActivo", usuario);
+        window.location.href = "dashboard.html";
+      } else {
+        mensaje.innerText = "Usuario o contraseña incorrectos.";
+      }
     }
   </script>
 

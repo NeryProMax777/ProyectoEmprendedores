@@ -27,21 +27,56 @@
       <h1 id="titulo-facultad">Selecciona una facultad</h1>
       <p>Escoge una facultad para comenzar tu ruta de estudio.</p>
     </section>
+<section class="instrucciones-panel">
+  <h2>¿Cómo funciona ModuleByte?</h2>
 
+  <div class="instrucciones-grid">
+    <div class="instruccion-card">
+      <span>1</span>
+      <h3>Elige una facultad</h3>
+      <p>Selecciona la facultad a la que quieres ingresar para ver las materias disponibles.</p>
+    </div>
+
+    <div class="instruccion-card">
+      <span>2</span>
+      <h3>Estudia por temas</h3>
+      <p>Cada bloque contiene temas con información, tiempo de estudio y contenido de apoyo.</p>
+    </div>
+
+    <div class="instruccion-card">
+      <span>3</span>
+      <h3>Responde el quiz</h3>
+      <p>Después de estudiar, responde preguntas del tema. Solo tienes 3 vidas.</p>
+    </div>
+
+    <div class="instruccion-card">
+      <span>4</span>
+      <h3>Avanza tu progreso</h3>
+      <p>Al completar los temas, tu barra de progreso aumenta y puedes seguir con otro bloque.</p>
+    </div>
+  </div>
+</section>
     <section class="progreso-panel">
-      <div class="progreso-texto">
-        <span>Progreso general</span>
-        <span id="progreso-porcentaje">0%</span>
-      </div>
-      <div class="barra-progreso">
-        <div class="barra-relleno" id="barra-relleno"></div>
-      </div>
-    </section>
+
+  <div class="progreso-header">
+    <div>
+      <h3>Progreso general</h3>
+      <p id="progreso-texto">0 de 0 temas completados</p>
+    </div>
+
+    <div class="porcentaje-grande" id="progreso-porcentaje">0%</div>
+  </div>
+
+  <div class="barra-progreso">
+    <div class="barra-relleno" id="barra-relleno"></div>
+  </div>
+
+</section>
 
     <section id="materias" class="materias-grid"></section>
   </main>
 
-  <script src="js/data.js"></script>
+ <script src="js/data.js"></script>
 <script>
   function toggleDropdown() {
     document.getElementById("dropdownFacultades").classList.toggle("show");
@@ -57,38 +92,44 @@
     const titulo = document.getElementById("titulo-facultad");
     const barra = document.getElementById("barra-relleno");
     const porcentaje = document.getElementById("progreso-porcentaje");
+    const texto = document.getElementById("progreso-texto");
 
-    const progresoGuardado = JSON.parse(localStorage.getItem("progresoUANL")) || {};
+    const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
     const materiasFacultad = data[facultad] || [];
 
     contenedor.innerHTML = "";
     titulo.textContent = "Facultad: " + facultad.toUpperCase();
 
-    let completadas = 0;
+    let totalTemas = 0;
+    let temasCompletados = 0;
 
     materiasFacultad.forEach((m, index) => {
-      const estaCompleta = progresoGuardado[m.id]?.completado === true;
-      if (estaCompleta) completadas++;
+      const temas = m.temas || [];
+      totalTemas += temas.length;
+
+      const guardado = progresoMateria[m.id];
+      const completados = guardado?.temasEstudiados || [];
+
+      temasCompletados += completados.length;
+
+      const estaCompleta = completados.length === temas.length && temas.length > 0;
 
       contenedor.innerHTML += `
         <div class="materia-card ${estaCompleta ? 'materia-completada' : ''}" onclick="abrirMateria('${m.id}')">
           <div class="materia-numero">Bloque ${index + 1}</div>
           <h3>${m.nombre}</h3>
-          <p>
-            ${estaCompleta 
-              ? 'Bloque completado. Puedes repasarlo cuando quieras.' 
-              : 'Presiona para estudiar este bloque y avanzar en tu progreso.'}
-          </p>
+          <p>${completados.length} de ${temas.length} temas completados</p>
         </div>
       `;
     });
 
-    const progreso = materiasFacultad.length
-      ? Math.round((completadas / materiasFacultad.length) * 100)
+    const progreso = totalTemas
+      ? Math.round((temasCompletados / totalTemas) * 100)
       : 0;
 
     barra.style.width = progreso + "%";
     porcentaje.textContent = progreso + "%";
+    texto.textContent = `${temasCompletados} de ${totalTemas} temas completados`;
   }
 
   function abrirMateria(id) {
