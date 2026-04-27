@@ -1,3 +1,4 @@
+//Comentario para guardar en Git hub
 let vidas = 3;
 let actual = 0;
 
