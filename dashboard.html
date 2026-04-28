@@ -89,50 +89,64 @@
   }
 
   function cargarFacultad(facultad) {
-    const contenedor = document.getElementById("materias");
-    const titulo = document.getElementById("titulo-facultad");
-    const barra = document.getElementById("barra-relleno");
-    const porcentaje = document.getElementById("progreso-porcentaje");
-    const texto = document.getElementById("progreso-texto");
+  const contenedor = document.getElementById("materias");
+  const titulo = document.getElementById("titulo-facultad");
+  const barra = document.getElementById("barra-relleno");
+  const porcentaje = document.getElementById("progreso-porcentaje");
+  const texto = document.getElementById("progreso-texto");
 
-    const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
-    const materiasFacultad = data[facultad] || [];
+  const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
+  const materiasFacultad = data[facultad] || [];
 
-    contenedor.innerHTML = "";
-    titulo.textContent = "Facultad: " + facultad.toUpperCase();
+  contenedor.innerHTML = "";
+  titulo.textContent = "Facultad: " + facultad.toUpperCase();
 
-    let totalTemas = 0;
-    let temasCompletados = 0;
+  let totalTemas = 0;
+  let temasCompletados = 0;
+  let bloqueAnteriorCompleto = true;
 
-    materiasFacultad.forEach((m, index) => {
-      const temas = m.temas || [];
-      totalTemas += temas.length;
+  materiasFacultad.forEach((m, index) => {
+    const temas = m.temas || [];
+    totalTemas += temas.length;
 
-      const guardado = progresoMateria[m.id];
-      const completados = guardado?.temasEstudiados || [];
+    const guardado = progresoMateria[m.id];
+    const completados = guardado?.temasEstudiados || [];
 
-      temasCompletados += completados.length;
+    temasCompletados += completados.length;
 
-      const estaCompleta = completados.length === temas.length && temas.length > 0;
+    const estaCompleta = completados.length === temas.length && temas.length > 0;
+    const bloqueado = index !== 0 && !bloqueAnteriorCompleto;
 
-      contenedor.innerHTML += `
-        <div class="materia-card ${estaCompleta ? 'materia-completada' : ''}" onclick="abrirMateria('${m.id}')">
-          <div class="materia-numero">Bloque ${index + 1}</div>
-          <h3>${m.nombre}</h3>
-          <p>${completados.length} de ${temas.length} temas completados</p>
+    contenedor.innerHTML += `
+      <div 
+        class="materia-card ${estaCompleta ? 'materia-completada' : ''} ${bloqueado ? 'materia-bloqueada' : ''}" 
+        onclick="${bloqueado ? `alert('Completa el bloque anterior para desbloquear este bloque.')` : `abrirMateria('${m.id}')`}"
+      >
+        <div class="materia-numero">
+          Bloque ${index + 1} ${bloqueado ? '🔒' : estaCompleta ? '✅' : '🔓'}
         </div>
-      `;
-    });
 
-    const progreso = totalTemas
-      ? Math.round((temasCompletados / totalTemas) * 100)
-      : 0;
+        <h3>${m.nombre}</h3>
 
-    barra.style.width = progreso + "%";
-    porcentaje.textContent = progreso + "%";
-    texto.textContent = `${temasCompletados} de ${totalTemas} temas completados`;
-  }
+        <p>
+          ${bloqueado 
+            ? 'Este bloque está bloqueado. Completa el anterior para continuar.' 
+            : `${completados.length} de ${temas.length} temas completados`}
+        </p>
+      </div>
+    `;
 
+    bloqueAnteriorCompleto = estaCompleta;
+  });
+
+  const progreso = totalTemas
+    ? Math.round((temasCompletados / totalTemas) * 100)
+    : 0;
+
+  barra.style.width = progreso + "%";
+  porcentaje.textContent = progreso + "%";
+  texto.textContent = `${temasCompletados} de ${totalTemas} temas completados`;
+}
   function abrirMateria(id) {
     localStorage.setItem("materia", id);
     window.location.href = "materia.html";

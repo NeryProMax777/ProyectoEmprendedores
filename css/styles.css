@@ -880,3 +880,15 @@ body {
     font-size: 4rem;
   }
 }
+
+.materia-bloqueada {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+}
+
+.materia-bloqueada:hover {
+  transform: none;
+  box-shadow: 0 10px 26px var(--sombra);
+  border-color: transparent;
+}
