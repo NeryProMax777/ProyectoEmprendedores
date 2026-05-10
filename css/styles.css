@@ -892,3 +892,160 @@ body {
   box-shadow: 0 10px 26px var(--sombra);
   border-color: transparent;
 }
+.personaje.muriendo {
+  animation: morir 1.2s ease forwards;
+}
+
+@keyframes morir {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateY(-10px) rotate(-10deg) scale(1.1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(40px) rotate(70deg) scale(0.9);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(90px) rotate(90deg) scale(0.7);
+    opacity: 0.2;
+  }
+}
+
+.animacion-panel.game-over {
+  background: linear-gradient(135deg, #2f1d1f, #7a1734);
+  color: white;
+}
+
+.animacion-panel.game-over .personaje-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.animacion-panel.game-over h3,
+.animacion-panel.game-over p {
+  color: white;
+}
+/* ===== GENERADOR ===== */
+.generador-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--beige), #f7f1e8, var(--beige-oscuro));
+  color: var(--texto);
+}
+
+.generador-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 35px 20px 50px;
+  display: grid;
+  gap: 25px;
+}
+
+.generador-card {
+  background: var(--blanco);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 24px var(--sombra);
+}
+
+.generador-card h1,
+.generador-card h2 {
+  color: var(--vino);
+  margin-bottom: 14px;
+}
+
+.generador-card textarea {
+  width: 100%;
+  min-height: 220px;
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #ead9ca;
+  background: #fffaf4;
+  color: var(--texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+}
+
+.generador-card textarea:focus {
+  border-color: var(--vino);
+  box-shadow: 0 0 0 3px rgba(122, 23, 52, 0.12);
+}
+
+.preguntas-generadas {
+  display: grid;
+  gap: 18px;
+}
+
+.pregunta-auto {
+  background: #fff8f1;
+  border: 1px solid #ead9ca;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.pregunta-auto h3 {
+  color: var(--vino);
+  margin-bottom: 8px;
+}
+
+.pregunta-auto p {
+  margin-bottom: 10px;
+}
+
+.pregunta-auto ul {
+  padding-left: 22px;
+  line-height: 1.7;
+}
+
+.pregunta-auto small {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--vino);
+  font-weight: bold;
+}
+.simulador-panel {
+  background: var(--blanco);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 8px 24px var(--sombra);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.simulador-panel h2 {
+  color: var(--vino);
+  margin-bottom: 10px;
+}
+
+.simulador-panel p {
+  color: var(--texto);
+  margin-bottom: 20px;
+}
+
+.btn-simulador {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cafe), var(--vino));
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 14px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-simulador:hover {
+  transform: translateY(-2px);
+}
+
+.oculto {
+  display: none;
+}

@@ -15,6 +15,9 @@
   <nav class="nav">
     <div class="menu">
       <button class="menu-btn" onclick="toggleDropdown()">Facultades</button>
+      <button class="menu-btn" onclick="window.location.href='generador.html'">
+  Generador IA
+</button>
 
       <div class="dropdown" id="dropdownFacultades">
         <p onclick="seleccionarFacultad('general')">Examen General</p>
@@ -74,6 +77,17 @@
     <div class="barra-relleno" id="barra-relleno"></div>
   </div>
 
+</section>
+<section class="simulador-panel oculto" id="simuladorPanel">
+  <h2>¡Preparación completada!</h2>
+  <p>Ya terminaste los temas de esta ruta. Ahora puedes practicar con el simulador oficial.</p>
+
+  <a 
+    href="https://exani.com.mx/simuladores/#google_vignette" 
+    target="_blank" 
+    class="btn-simulador">
+    Ir al simulador oficial
+  </a>
 </section>
 
     <section id="materias" class="materias-grid"></section>
@@ -148,7 +162,15 @@
   barra.style.width = progreso + "%";
   porcentaje.textContent = progreso + "%";
   texto.textContent = `${temasCompletados} de ${totalTemas} temas completados`;
+  const simuladorPanel = document.getElementById("simuladorPanel");
+
+if (totalTemas > 0 && temasCompletados === totalTemas) {
+  simuladorPanel.classList.remove("oculto");
+} else {
+  simuladorPanel.classList.add("oculto");
 }
+}
+
   function abrirMateria(id) {
     localStorage.setItem("materia", id);
     window.location.href = "materia.html";

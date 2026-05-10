@@ -134,19 +134,35 @@ function responder(i) {
     guardarProgresoQuiz();
 
     if (vidas <= 0) {
-      progresoQuiz[claveTema] = {
-        preguntaActual: 0,
-        vidasRestantes: 3,
-        completado: false
-      };
+  const panelAnimacion = document.querySelector(".animacion-panel");
 
-      localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
+  personaje.classList.remove("correcto", "error");
+  personaje.textContent = "😵";
+  personaje.classList.add("muriendo");
 
-      setTimeout(() => {
-        alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
-        window.location.href = "materia.html";
-      }, 400);
-    }
+  if (panelAnimacion) {
+    panelAnimacion.classList.add("game-over");
+  }
+
+  estadoJugador.innerText = "El jugador cayó. Perdiste tus 3 vidas.";
+
+  progresoQuiz[claveTema] = {
+    preguntaActual: 0,
+    vidasRestantes: 3,
+    completado: false
+  };
+
+  localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
+
+  setTimeout(() => {
+    personaje.textContent = "💀";
+  }, 700);
+
+  setTimeout(() => {
+    alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
+    window.location.href = "materia.html";
+  }, 1600);
+}
   }
 }
 

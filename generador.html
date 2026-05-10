@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Preguntas | ModuleByte</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="generador-body">
+
+  <header class="materia-topbar">
+    <div class="logo-mini">ModuleByte</div>
+    <button class="btn-volver" onclick="window.location.href='dashboard.html'">← Volver</button>
+  </header>
+
+  <main class="generador-container">
+    <section class="generador-card">
+      <p class="seccion-label">Herramienta inteligente</p>
+      <h1>Generador automático de preguntas</h1>
+      <p class="materia-descripcion">
+        Pega un texto de estudio y el sistema generará preguntas básicas para practicar.
+      </p>
+
+      <textarea id="textoBase" placeholder="Pega aquí el contenido del tema..."></textarea>
+
+      <button class="btn-principal" onclick="generarPreguntas()">Generar preguntas</button>
+    </section>
+
+    <section class="generador-card">
+      <h2>Preguntas generadas</h2>
+      <div id="preguntasGeneradas" class="preguntas-generadas">
+        Aún no hay preguntas generadas.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function generarPreguntas() {
+      const texto = document.getElementById("textoBase").value.trim();
+      const contenedor = document.getElementById("preguntasGeneradas");
+
+      if (texto.length < 40) {
+        contenedor.innerHTML = "<p>Escribe un texto más largo para generar preguntas.</p>";
+        return;
+      }
+
+      const oraciones = texto
+        .split(/[.!?]/)
+        .map(o => o.trim())
+        .filter(o => o.length > 25);
+
+      if (oraciones.length === 0) {
+        contenedor.innerHTML = "<p>No se encontraron suficientes ideas para generar preguntas.</p>";
+        return;
+      }
+
+      const preguntas = oraciones.slice(0, 8).map((oracion, index) => {
+        const palabras = oracion.split(" ").filter(p => p.length > 4);
+        const palabraClave = palabras[0] || "el tema";
+
+        return `
+          <div class="pregunta-auto">
+            <h3>Pregunta ${index + 1}</h3>
+            <p>¿Qué se menciona sobre <strong>${palabraClave}</strong>?</p>
+            <ul>
+              <li>${oracion}</li>
+              <li>No se relaciona con el texto</li>
+              <li>Es una idea contraria al contenido</li>
+            </ul>
+            <small>Respuesta sugerida: opción 1</small>
+          </div>
+        `;
+      });
+
+      contenedor.innerHTML = preguntas.join("");
+    }
+  </script>
+
+</body>
+</html>
