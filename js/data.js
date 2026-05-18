@@ -55,78 +55,41 @@ Ejemplo:
   id: "fracciones_porcentajes",
   titulo: "Fracciones y porcentajes",
   tiempo: 200,
-  contenido: `
-FRACCIONES
-
-Una fracción representa una parte de un todo.
-
-Ejemplo:
-1/2 = la mitad  
-3/4 = tres partes de cuatro  
-
-OPERACIONES CON FRACCIONES
-
-Suma y resta:
-Se necesita el mismo denominador.
+  contenido: {
+    informacion: `
+Las fracciones representan partes de un todo.
 
 Ejemplo:
-1/4 + 1/4 = 2/4 = 1/2
+1/2 = la mitad
+3/4 = tres partes de cuatro
 
-Multiplicación:
-Se multiplica numerador con numerador y denominador con denominador.
-
-Ejemplo:
-1/2 × 3/4 = 3/8
-
-División:
-Se multiplica por el inverso.
-
-Ejemplo:
-1/2 ÷ 3/4 = 1/2 × 4/3 = 4/6 = 2/3
-
-
-PORCENTAJES
-
-Porcentaje significa "de cada 100".
-
-Ejemplo:
-50% = 50/100 = 0.5  
-25% = 1/4  
-
-FÓRMULA:
-(Parte / Total) × 100
-
-Ejemplo:
+El porcentaje significa “de cada 100”.
+50% = 50/100 = 0.5
+25% = 25/100 = 0.25
+    `,
+    ejemplo: `
+Ejemplo 1:
 ¿Cuánto es el 20% de 50?
-(20/100) × 50 = 10
 
+20% = 20/100 = 0.2
+0.2 × 50 = 10
 
-REGLA DE 3
+Respuesta: 10
 
-Se usa cuando hay proporciones.
+Ejemplo 2:
+1/2 + 1/4
 
-Ejemplo:
-Si 2 cuadernos cuestan $10  
-¿Cuánto cuestan 4?
+Convertimos a mismo denominador:
+1/2 = 2/4
 
-2 → 10  
-4 → x  
-
-x = (4 × 10) / 2 = 20
-`,
+Entonces:
+2/4 + 1/4 = 3/4
+    `,
+   video: "https://www.youtube.com/embed/Aq5WXmQQooo"
+  },
   preguntas: [
-
     { pregunta: "¿Cuánto es 1/2 + 1/2?", opciones: ["1", "2", "1/2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 1/2 × 3/4?", opciones: ["3/8", "3/6", "1/2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 1/2 ÷ 3/4?", opciones: ["2/3", "3/2", "1/6"], correcta: 0 },
-    { pregunta: "¿Cuál es el equivalente de 50%?", opciones: ["0.5", "5", "50"], correcta: 0 },
-    { pregunta: "¿Cuánto es el 25% de 100?", opciones: ["25", "50", "75"], correcta: 0 },
-    { pregunta: "¿Cuánto es el 10% de 200?", opciones: ["10", "20", "30"], correcta: 1 },
-    { pregunta: "¿Cuánto es 3/4 en decimal?", opciones: ["0.75", "0.5", "1.25"], correcta: 0 },
-    { pregunta: "¿Cuánto es 20% de 50?", opciones: ["5", "10", "20"], correcta: 1 },
-    { pregunta: "Si 2 cuadernos cuestan 10, ¿cuánto cuestan 4?", opciones: ["20", "15", "10"], correcta: 0 },
-    { pregunta: "¿Cuál es la mitad de 80?", opciones: ["20", "40", "60"], correcta: 1 }
-
+    { pregunta: "¿Cuál es el equivalente de 50%?", opciones: ["0.5", "5", "50"], correcta: 0 }
   ]
 },
 
@@ -1033,5 +996,5 @@ También pueden aparecer porcentajes, proporciones y ecuaciones simples.
     ]
   }
 
-]
+] 
 };

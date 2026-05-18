@@ -47,11 +47,26 @@
     </section>
 
     <section class="contenido-panel">
-      <h2 id="tituloTemaActual">Contenido de estudio</h2>
-      <div id="contenido" class="contenido-box">
-        Selecciona un tema para comenzar.
-      </div>
-    </section>
+  <div class="contenido-header">
+    <h2 id="tituloTemaActual">Contenido de estudio</h2>
+
+    <div class="tabs-contenido">
+      <button class="tab-btn activo" id="tabInfo" onclick="cambiarPestana(0)">Información</button>
+      <button class="tab-btn" id="tabEjemplo" onclick="cambiarPestana(1)">Ejemplo</button>
+      <button class="tab-btn" id="tabVideo" onclick="cambiarPestana(2)">Video</button>
+    </div>
+  </div>
+
+  <div id="contenido" class="contenido-box">
+    Selecciona un tema para comenzar.
+  </div>
+
+  <div class="navegacion-contenido">
+    <button class="btn-secundario" onclick="pestanaAnterior()">← Anterior</button>
+    <span id="pestanaIndicador">1 / 3</span>
+    <button class="btn-secundario" onclick="pestanaSiguiente()">Siguiente →</button>
+  </div>
+</section>
 
     <section class="acciones-panel">
       <button class="btn-secundario" onclick="agregarTiempo()" id="btnMasTiempo" disabled>+ Más tiempo</button>
@@ -77,6 +92,7 @@
   let tiempo = 0;
   let intervalo = null;
   let temaActual = null;
+  let pestanaActual = 0;
 
   const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
 
@@ -119,7 +135,8 @@
 
     document.getElementById(`temaBtn${index}`).classList.add("activo");
     tituloTemaActual.innerText = tema.titulo;
-    contenido.innerText = tema.contenido;
+    pestanaActual = 0;
+    mostrarContenidoTema();
 
     tiempo = tema.tiempo || 30;
     timer.innerText = tiempo;
@@ -205,7 +222,8 @@
 
     document.getElementById(`temaBtn${temaActual}`).classList.add("activo");
     tituloTemaActual.innerText = tema.titulo;
-    contenido.innerText = tema.contenido;
+    pestanaActual = 0;
+    mostrarContenidoTema();
 
     timer.innerText = tiempo;
     timerBox.classList.remove("oculto");
@@ -280,6 +298,103 @@
     const botones = document.querySelectorAll(".tema-item-btn");
     botones.forEach(btn => btn.classList.remove("activo"));
   }
+  function mostrarContenidoTema() {
+  if (temaActual === null) {
+    contenido.innerText = "Selecciona un tema para comenzar.";
+    return;
+  }
+
+  const tema = materia.temas[temaActual];
+
+  const contenidoTema = tema.contenido;
+
+  actualizarTabs();
+
+  if (typeof contenidoTema === "string") {
+    contenido.innerText = contenidoTema;
+    return;
+  }
+
+  if (pestanaActual === 0) {
+    contenido.innerText = contenidoTema.informacion || "No hay información disponible.";
+  }
+
+  if (pestanaActual === 1) {
+    contenido.innerText = contenidoTema.ejemplo || "No hay ejemplo disponible.";
+  }
+
+  if (pestanaActual === 2) {
+    if (contenidoTema.video) {contenido.innerHTML = `
+  <div class="video-box">
+    <iframe 
+      src="${contenidoTema.video}" 
+      title="Video del tema"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p style="margin-top: 12px;">
+    Si el video no carga, 
+    <a href="${contenidoTema.video.replace('/embed/', '/watch?v=')}" target="_blank">
+      ábrelo directamente en YouTube
+    </a>.
+  </p>
+`;
+    } else {
+      contenido.innerText = "No hay video disponible para este tema.";
+    }
+  }
+}
+
+function cambiarPestana(numero) {
+  if (temaActual === null) {
+    alert("Primero selecciona un tema.");
+    return;
+  }
+
+  pestanaActual = numero;
+  mostrarContenidoTema();
+}
+
+function pestanaAnterior() {
+  if (temaActual === null) return;
+
+  pestanaActual--;
+
+  if (pestanaActual < 0) {
+    pestanaActual = 2;
+  }
+
+  mostrarContenidoTema();
+}
+
+function pestanaSiguiente() {
+  if (temaActual === null) return;
+
+  pestanaActual++;
+
+  if (pestanaActual > 2) {
+    pestanaActual = 0;
+  }
+
+  mostrarContenidoTema();
+}
+
+function actualizarTabs() {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const indicador = document.getElementById("pestanaIndicador");
+
+  tabs.forEach(tab => tab.classList.remove("activo"));
+
+  if (pestanaActual === 0) document.getElementById("tabInfo").classList.add("activo");
+  if (pestanaActual === 1) document.getElementById("tabEjemplo").classList.add("activo");
+  if (pestanaActual === 2) document.getElementById("tabVideo").classList.add("activo");
+
+  indicador.innerText = `${pestanaActual + 1} / 3`;
+}
 
   function volverDashboard() {
     window.location.href = "dashboard.html";
