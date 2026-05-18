@@ -1111,3 +1111,50 @@ body {
   width: 100%;
   height: 100%;
 }
+.video-link-box {
+  background: linear-gradient(135deg, #fff8f1, #f3e6da);
+  border: 1px solid #ead9ca;
+  border-radius: 20px;
+  padding: 35px;
+  text-align: center;
+}
+
+.video-icono {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cafe), var(--vino));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.video-link-box h3 {
+  color: var(--vino);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.video-link-box p {
+  color: var(--texto);
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.btn-video-youtube {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cafe), var(--vino));
+  color: white;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 14px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-video-youtube:hover {
+  transform: translateY(-2px);
+}

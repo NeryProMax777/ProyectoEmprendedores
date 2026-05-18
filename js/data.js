@@ -85,7 +85,7 @@ Convertimos a mismo denominador:
 Entonces:
 2/4 + 1/4 = 3/4
     `,
-   video: "https://www.youtube.com/embed/Aq5WXmQQooo"
+   video: "https://youtu.be/Aq5WXmQQooo?si=o0gtI1IRf0YVEJue"
   },
   preguntas: [
     { pregunta: "¿Cuánto es 1/2 + 1/2?", opciones: ["1", "2", "1/2"], correcta: 0 },

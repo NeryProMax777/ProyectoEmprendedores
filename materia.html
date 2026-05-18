@@ -90,9 +90,10 @@
   const btnQuiz = document.getElementById("btnQuiz");
 
   let tiempo = 0;
-  let intervalo = null;
-  let temaActual = null;
-  let pestanaActual = 0;
+let intervalo = null;
+let temaActual = null;
+let pestanaActual = 0;
+let temporizadorPausado = false;
 
   const progresoMateria = JSON.parse(localStorage.getItem("progresoMateria")) || {};
 
@@ -324,29 +325,34 @@
   }
 
   if (pestanaActual === 2) {
-    if (contenidoTema.video) {contenido.innerHTML = `
-  <div class="video-box">
-    <iframe 
-      src="${contenidoTema.video}" 
-      title="Video del tema"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
+  if (contenidoTema.video) {
+    contenido.innerHTML = `
+      <div class="video-link-box">
+        <div class="video-icono">▶</div>
 
-  <p style="margin-top: 12px;">
-    Si el video no carga, 
-    <a href="${contenidoTema.video.replace('/embed/', '/watch?v=')}" target="_blank">
-      ábrelo directamente en YouTube
-    </a>.
-  </p>
-`;
-    } else {
-      contenido.innerText = "No hay video disponible para este tema.";
-    }
+        <h3>Video de apoyo</h3>
+
+        <p>
+          Para evitar errores de reproducción, el video se abrirá directamente en YouTube.
+        </p>
+
+        <a 
+  href="${contenidoTema.video}" 
+  target="_blank" 
+  class="btn-video-youtube"
+  onclick="pausarTemporizador()">
+  Ver video en YouTube
+</a>
+
+<button class="btn-secundario" onclick="reanudarTemporizador()" style="margin-left: 10px;">
+  Reanudar tiempo
+</button>
+      </div>
+    `;
+  } else {
+    contenido.innerText = "No hay video disponible para este tema.";
   }
+}
 }
 
 function cambiarPestana(numero) {
@@ -357,6 +363,12 @@ function cambiarPestana(numero) {
 
   pestanaActual = numero;
   mostrarContenidoTema();
+
+  if (pestanaActual === 2) {
+    pausarTemporizador();
+  } else {
+    reanudarTemporizador();
+  }
 }
 
 function pestanaAnterior() {
@@ -394,6 +406,18 @@ function actualizarTabs() {
   if (pestanaActual === 2) document.getElementById("tabVideo").classList.add("activo");
 
   indicador.innerText = `${pestanaActual + 1} / 3`;
+}
+function pausarTemporizador() {
+  clearInterval(intervalo);
+  temporizadorPausado = true;
+}
+
+function reanudarTemporizador() {
+  if (temaActual === null || tiempo <= 0) return;
+
+  clearInterval(intervalo);
+  temporizadorPausado = false;
+  iniciarTemporizador();
 }
 
   function volverDashboard() {
