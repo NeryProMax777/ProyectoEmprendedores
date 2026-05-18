@@ -1,363 +1,1007 @@
 //Comentario para guardar en Git hub
 const data = {
   fcfm: [
+  {
+    id: "aritmetica_fcfm",
+    nombre: "Aritmética",
+    temas: [
+      {
+        id: "operaciones_basicas_fcfm",
+        titulo: "Operaciones básicas y ley de signos",
+        tiempo: 360,
+        contenido: {
+          informacion: `
+En el EXANI-II, las operaciones básicas son fundamentales porque aparecen dentro de problemas más largos. No basta con saber sumar, restar, multiplicar o dividir; también es importante respetar la jerarquía de operaciones y la ley de signos.
 
-    // ===== ARITMÉTICA =====
-    {
-      id: "aritmetica_fcfm",
-      nombre: "Aritmética",
-      temas: [
+OPERACIONES BÁSICAS
 
-        {
-  id: "operaciones_basicas",
-  titulo: "Operaciones básicas y ley de signos",
-  tiempo: 180,
-  contenido: `
-Operaciones básicas:
-Suma, resta, multiplicación y división.
+Las operaciones principales son:
 
-Ley de signos:
-+ × + = +
-- × - = +
-+ × - = -
-- × + = -
+- Suma
+- Resta
+- Multiplicación
+- División
+
+Estas operaciones pueden aparecer con números enteros, decimales y fracciones.
+
+LEY DE SIGNOS
+
+La ley de signos se usa principalmente en multiplicación y división:
+
++ por + = +
+- por - = +
++ por - = -
+- por + = -
 
 Ejemplos:
-(-3)(-2) = 6
+
+(-4)(-3) = 12
+
 (-5)(2) = -10
 
-Jerarquía de operaciones:
+(-18) ÷ 3 = -6
+
+JERARQUÍA DE OPERACIONES
+
+Cuando una operación tiene varios signos, se debe seguir un orden:
+
 1. Paréntesis
-2. Potencias
-3. Multiplicación y división
-4. Suma y resta
+2. Potencias y raíces
+3. Multiplicaciones y divisiones
+4. Sumas y restas
 
 Ejemplo:
+
+2 + 3 × 4
+
+Primero se multiplica:
+
+3 × 4 = 12
+
+Después se suma:
+
+2 + 12 = 14
+
+El resultado correcto es 14, no 20.
+
+SIGNOS DE AGRUPACIÓN
+
+Los paréntesis, corchetes y llaves sirven para indicar qué operación se resuelve primero.
+
+Ejemplo:
+
+(2 + 3) × 4 = 5 × 4 = 20
+
+En cambio:
+
 2 + 3 × 4 = 14
-`,
-  preguntas: [
 
-    { pregunta: "¿Cuánto es (-4)(-2)?", opciones: ["-8", "8", "6"], correcta: 1 },
-    { pregunta: "¿Cuánto es (-3)(5)?", opciones: ["15", "-15", "8"], correcta: 1 },
-    { pregunta: "¿Cuánto es 6 ÷ 2?", opciones: ["3", "2", "4"], correcta: 0 },
-    { pregunta: "¿Cuánto es 2 + 3 × 4?", opciones: ["20", "14", "24"], correcta: 1 },
-    { pregunta: "¿Cuánto es (2 + 3) × 4?", opciones: ["20", "14", "10"], correcta: 0 },
-    { pregunta: "¿Cuánto es -10 + 5?", opciones: ["-5", "5", "15"], correcta: 0 },
-    { pregunta: "¿Cuánto es -6 ÷ 2?", opciones: ["-3", "3", "4"], correcta: 0 },
-    { pregunta: "¿Cuánto es (-2)^2?", opciones: ["4", "-4", "2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 8 - 3 × 2?", opciones: ["10", "2", "14"], correcta: 1 },
-    { pregunta: "¿Cuánto es 5 × 0?", opciones: ["0", "5", "1"], correcta: 0 }
+Aunque usan los mismos números, el resultado cambia por los paréntesis.
 
-  ]
-},
+POTENCIAS
 
-      {
-  id: "fracciones_porcentajes",
-  titulo: "Fracciones y porcentajes",
-  tiempo: 200,
-  contenido: {
-    informacion: `
-Las fracciones representan partes de un todo.
+Una potencia indica que un número se multiplica por sí mismo.
 
 Ejemplo:
-1/2 = la mitad
-3/4 = tres partes de cuatro
 
-El porcentaje significa “de cada 100”.
-50% = 50/100 = 0.5
-25% = 25/100 = 0.25
-    `,
-    ejemplo: `
-Ejemplo 1:
-¿Cuánto es el 20% de 50?
+3² = 3 × 3 = 9
 
-20% = 20/100 = 0.2
-0.2 × 50 = 10
+(-2)² = (-2)(-2) = 4
+
+Pero:
+
+-2² = -(2²) = -4
+
+Por eso es importante revisar si el signo negativo está dentro o fuera del paréntesis.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Resolver:
+
+8 - 3 × 2
+
+Primero se multiplica:
+
+3 × 2 = 6
+
+Después se resta:
+
+8 - 6 = 2
+
+Respuesta: 2
+
+
+EJEMPLO 2
+
+Resolver:
+
+(8 - 3) × 2
+
+Primero se resuelve el paréntesis:
+
+8 - 3 = 5
+
+Después se multiplica:
+
+5 × 2 = 10
 
 Respuesta: 10
 
-Ejemplo 2:
+
+EJEMPLO 3
+
+Resolver:
+
+(-6)(-4)
+
+Como los dos signos son negativos, el resultado es positivo:
+
+(-6)(-4) = 24
+
+Respuesta: 24
+
+
+EJEMPLO 4
+
+Resolver:
+
+-10 + 4 × 3
+
+Primero se multiplica:
+
+4 × 3 = 12
+
+Después:
+
+-10 + 12 = 2
+
+Respuesta: 2
+          `,
+          video: "https://www.youtube.com/results?search_query=operaciones+basicas+ley+de+signos+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Cuál es el resultado de (-4)(-3)?", opciones: ["-12", "12", "7"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de (-5)(2)?", opciones: ["10", "-10", "-7"], correcta: 1 },
+          { pregunta: "¿Qué operación se resuelve primero en 2 + 3 × 4?", opciones: ["La suma", "La multiplicación", "La resta"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de 2 + 3 × 4?", opciones: ["20", "14", "24"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de (2 + 3) × 4?", opciones: ["20", "14", "9"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de -18 ÷ 3?", opciones: ["-6", "6", "-15"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de (-2)²?", opciones: ["4", "-4", "2"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de 8 - 3 × 2?", opciones: ["10", "2", "5"], correcta: 1 },
+          { pregunta: "¿Qué signo tiene el resultado de positivo por negativo?", opciones: ["Positivo", "Negativo", "Cero"], correcta: 1 },
+          { pregunta: "¿Para qué sirven los paréntesis en una operación?", opciones: ["Para indicar prioridad", "Para cambiar letras", "Para eliminar números"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "fracciones_porcentajes_fcfm",
+        titulo: "Fracciones, porcentajes y regla de tres",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+Las fracciones y porcentajes son temas muy importantes para el EXANI-II porque aparecen en problemas de proporciones, descuentos, aumentos, reparto proporcional y análisis de cantidades.
+
+FRACCIONES
+
+Una fracción representa una parte de un todo.
+
+Ejemplo:
+
+1/2 significa una parte de dos.
+3/4 significa tres partes de cuatro.
+
+PARTES DE UNA FRACCIÓN
+
+Numerador: número de arriba.
+Denominador: número de abajo.
+
+Ejemplo:
+
+3/5
+
+3 es el numerador.
+5 es el denominador.
+
+SUMA Y RESTA DE FRACCIONES
+
+Si las fracciones tienen el mismo denominador, se suman o restan los numeradores.
+
+Ejemplo:
+
+1/5 + 2/5 = 3/5
+
+Si tienen diferente denominador, se busca un denominador común.
+
+Ejemplo:
+
 1/2 + 1/4
 
-Convertimos a mismo denominador:
+Convertimos 1/2 a cuartos:
+
 1/2 = 2/4
 
 Entonces:
+
 2/4 + 1/4 = 3/4
-    `,
-   video: "https://youtu.be/Aq5WXmQQooo?si=o0gtI1IRf0YVEJue"
-  },
-  preguntas: [
-    { pregunta: "¿Cuánto es 1/2 + 1/2?", opciones: ["1", "2", "1/2"], correcta: 0 },
-    { pregunta: "¿Cuál es el equivalente de 50%?", opciones: ["0.5", "5", "50"], correcta: 0 }
-  ]
-},
 
-        {
-  id: "mcm_mcd",
-  titulo: "Mínimo Común Múltiplo y Máximo Común Divisor",
-  tiempo: 180,
-  contenido: `
-MÍNIMO COMÚN MÚLTIPLO (MCM)
+MULTIPLICACIÓN DE FRACCIONES
 
-El MCM es el número más pequeño que es múltiplo de dos o más números.
+Se multiplica numerador por numerador y denominador por denominador.
 
 Ejemplo:
-Múltiplos de 4: 4, 8, 12, 16...
-Múltiplos de 6: 6, 12, 18...
+
+2/3 × 4/5 = 8/15
+
+DIVISIÓN DE FRACCIONES
+
+Se multiplica por el inverso de la segunda fracción.
+
+Ejemplo:
+
+1/2 ÷ 3/4
+
+Se convierte en:
+
+1/2 × 4/3 = 4/6 = 2/3
+
+PORCENTAJES
+
+Porcentaje significa “de cada 100”.
+
+Ejemplos:
+
+50% = 50/100 = 0.5 = 1/2
+
+25% = 25/100 = 0.25 = 1/4
+
+10% = 10/100 = 0.1
+
+Para calcular un porcentaje:
+
+Porcentaje × cantidad
+
+Ejemplo:
+
+20% de 80
+
+20/100 = 0.2
+
+0.2 × 80 = 16
+
+REGLA DE TRES
+
+La regla de tres se usa para resolver problemas de proporcionalidad.
+
+Ejemplo:
+
+Si 2 libretas cuestan $30, ¿cuánto cuestan 5 libretas?
+
+2 → 30
+5 → x
+
+x = (5 × 30) / 2
+
+x = 150 / 2
+
+x = 75
+
+Respuesta: $75
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Resolver:
+
+1/2 + 1/4
+
+Convertimos 1/2 a cuartos:
+
+1/2 = 2/4
+
+Entonces:
+
+2/4 + 1/4 = 3/4
+
+Respuesta: 3/4
+
+
+EJEMPLO 2
+
+Calcular el 15% de 200.
+
+15% = 15/100 = 0.15
+
+0.15 × 200 = 30
+
+Respuesta: 30
+
+
+EJEMPLO 3
+
+Si 3 boletos cuestan $90, ¿cuánto cuestan 7 boletos?
+
+3 → 90
+7 → x
+
+x = (7 × 90) / 3
+
+x = 630 / 3
+
+x = 210
+
+Respuesta: $210
+
+
+EJEMPLO 4
+
+Resolver:
+
+2/3 × 3/4
+
+Multiplicamos numerador por numerador:
+
+2 × 3 = 6
+
+Multiplicamos denominador por denominador:
+
+3 × 4 = 12
+
+6/12 = 1/2
+
+Respuesta: 1/2
+          `,
+          video: "https://www.youtube.com/results?search_query=fracciones+porcentajes+regla+de+tres+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Cuánto es 1/2 + 1/4?", opciones: ["3/4", "2/6", "1/8"], correcta: 0 },
+          { pregunta: "¿Cuánto es 2/3 × 3/4?", opciones: ["1/2", "5/7", "6/7"], correcta: 0 },
+          { pregunta: "¿Cuánto es 1/2 ÷ 3/4?", opciones: ["2/3", "3/2", "1/6"], correcta: 0 },
+          { pregunta: "¿Cuál es el equivalente decimal de 50%?", opciones: ["0.5", "5", "50"], correcta: 0 },
+          { pregunta: "¿Cuánto es el 25% de 200?", opciones: ["25", "50", "75"], correcta: 1 },
+          { pregunta: "¿Cuánto es el 10% de 90?", opciones: ["9", "10", "19"], correcta: 0 },
+          { pregunta: "¿Cuánto es 3/4 en decimal?", opciones: ["0.75", "0.5", "1.25"], correcta: 0 },
+          { pregunta: "Si 2 libretas cuestan 30, ¿cuánto cuestan 5?", opciones: ["75", "60", "90"], correcta: 0 },
+          { pregunta: "¿Qué significa porcentaje?", opciones: ["De cada 100", "De cada 10", "Multiplicar por 2"], correcta: 0 },
+          { pregunta: "¿Para qué se usa la regla de tres?", opciones: ["Para resolver proporciones", "Para ordenar textos", "Para sacar raíces"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "mcm_mcd_fcfm",
+        titulo: "MCM, MCD y divisibilidad",
+        tiempo: 360,
+        contenido: {
+          informacion: `
+El MCM y el MCD son herramientas importantes para resolver problemas con números enteros, fracciones, repartos y situaciones donde se repiten eventos.
+
+DIVISIBILIDAD
+
+Un número es divisible entre otro cuando la división es exacta, es decir, no sobra residuo.
+
+Ejemplo:
+
+12 es divisible entre 3 porque:
+
+12 ÷ 3 = 4
+
+Reglas comunes de divisibilidad:
+
+Divisible entre 2:
+Cuando termina en número par.
+
+Ejemplo:
+18, 24, 100
+
+Divisible entre 3:
+Cuando la suma de sus cifras es múltiplo de 3.
+
+Ejemplo:
+123
+
+1 + 2 + 3 = 6
+
+Como 6 es múltiplo de 3, 123 es divisible entre 3.
+
+Divisible entre 5:
+Cuando termina en 0 o 5.
+
+Ejemplo:
+25, 100, 135
+
+MCM
+
+MCM significa Mínimo Común Múltiplo.
+
+Es el número más pequeño que es múltiplo común de dos o más números.
+
+Ejemplo:
+
+Múltiplos de 4:
+
+4, 8, 12, 16, 20...
+
+Múltiplos de 6:
+
+6, 12, 18, 24...
+
+El primer múltiplo común es 12.
 
 MCM de 4 y 6 = 12
 
+El MCM se usa en problemas de eventos que se repiten.
 
-MÁXIMO COMÚN DIVISOR (MCD)
+MCD
 
-El MCD es el número más grande que divide exactamente a dos o más números.
+MCD significa Máximo Común Divisor.
+
+Es el número más grande que divide exactamente a dos o más números.
 
 Ejemplo:
-Divisores de 8: 1, 2, 4, 8  
-Divisores de 12: 1, 2, 3, 4, 6, 12  
+
+Divisores de 8:
+
+1, 2, 4, 8
+
+Divisores de 12:
+
+1, 2, 3, 4, 6, 12
+
+El divisor común más grande es 4.
 
 MCD de 8 y 12 = 4
 
+El MCD se usa para simplificar fracciones o repartir cantidades en partes iguales.
+          `,
+          ejemplo: `
+EJEMPLO 1
 
-MÉTODO CON FACTORES PRIMOS
+Encontrar el MCM de 6 y 8.
 
-Ejemplo con 12 y 18:
+Múltiplos de 6:
 
-12 = 2 × 2 × 3  
-18 = 2 × 3 × 3  
+6, 12, 18, 24, 30...
 
-MCM = 2 × 2 × 3 × 3 = 36  
-MCD = 2 × 3 = 6
+Múltiplos de 8:
+
+8, 16, 24, 32...
+
+El primer múltiplo común es 24.
+
+Respuesta: MCM = 24
 
 
-USOS IMPORTANTES
+EJEMPLO 2
 
-MCM:
-- Problemas de tiempo
-- Eventos que se repiten
+Encontrar el MCD de 18 y 24.
 
-MCD:
-- Simplificar fracciones
-- Dividir en partes iguales
-`,
-  preguntas: [
+Divisores de 18:
 
-    { pregunta: "¿Cuál es el MCM de 4 y 6?", opciones: ["12", "24", "6"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 8 y 12?", opciones: ["2", "4", "6"], correcta: 1 },
-    { pregunta: "¿Cuál es el MCM de 3 y 5?", opciones: ["15", "8", "10"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 9 y 6?", opciones: ["3", "6", "9"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCM de 2 y 7?", opciones: ["14", "9", "7"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 10 y 5?", opciones: ["5", "10", "2"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCM de 8 y 12?", opciones: ["24", "12", "48"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 15 y 20?", opciones: ["5", "10", "15"], correcta: 0 },
-    { pregunta: "¿Para qué se usa el MCM?", opciones: ["Eventos que coinciden", "Dividir números", "Sumar fracciones"], correcta: 0 },
-    { pregunta: "¿Para qué se usa el MCD?", opciones: ["Simplificar", "Multiplicar", "Elevar"], correcta: 0 }
+1, 2, 3, 6, 9, 18
 
-  ]
-}
+Divisores de 24:
 
-      ]
-    },
+1, 2, 3, 4, 6, 8, 12, 24
 
-    // ===== PROBABILIDAD Y ESTADÍSTICA =====
-    {
-      id: "probabilidad_fcfm",
-      nombre: "Probabilidad y Estadística",
-      temas: [
+El divisor común más grande es 6.
 
-        {
-  id: "media_moda_mediana",
-  titulo: "Media, moda y mediana",
-  tiempo: 200,
-  contenido: `
-MEDIA (PROMEDIO)
+Respuesta: MCD = 6
+
+
+EJEMPLO 3
+
+Simplificar 12/18 usando MCD.
+
+MCD de 12 y 18 = 6
+
+12 ÷ 6 = 2
+
+18 ÷ 6 = 3
+
+Respuesta: 12/18 = 2/3
+
+
+EJEMPLO 4
+
+Dos luces parpadean cada 4 y 6 segundos. ¿Cada cuántos segundos parpadean juntas?
+
+MCM de 4 y 6 = 12
+
+Respuesta: cada 12 segundos.
+          `,
+          video: "https://www.youtube.com/results?search_query=mcm+mcd+divisibilidad+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Cuál es el MCM de 4 y 6?", opciones: ["12", "24", "6"], correcta: 0 },
+          { pregunta: "¿Cuál es el MCD de 8 y 12?", opciones: ["2", "4", "6"], correcta: 1 },
+          { pregunta: "¿Cuál es el MCM de 3 y 5?", opciones: ["15", "8", "10"], correcta: 0 },
+          { pregunta: "¿Cuál es el MCD de 18 y 24?", opciones: ["6", "12", "3"], correcta: 0 },
+          { pregunta: "¿Qué número es divisible entre 5?", opciones: ["35", "32", "18"], correcta: 0 },
+          { pregunta: "¿Cuándo un número es divisible entre 2?", opciones: ["Cuando termina en par", "Cuando termina en 5", "Cuando es decimal"], correcta: 0 },
+          { pregunta: "¿Para qué se usa el MCM?", opciones: ["Eventos que se repiten", "Ortografía", "Comprensión lectora"], correcta: 0 },
+          { pregunta: "¿Para qué se usa el MCD?", opciones: ["Simplificar fracciones", "Calcular velocidad", "Clasificar textos"], correcta: 0 },
+          { pregunta: "Simplifica 12/18 usando MCD.", opciones: ["2/3", "3/2", "6/9"], correcta: 0 },
+          { pregunta: "Si dos eventos ocurren cada 4 y 6 segundos, ¿cuándo coinciden?", opciones: ["Cada 12 segundos", "Cada 10 segundos", "Cada 6 segundos"], correcta: 0 }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: "probabilidad_estadistica_fcfm",
+    nombre: "Probabilidad y Estadística",
+    temas: [
+      {
+        id: "media_moda_mediana_fcfm",
+        titulo: "Media, moda, mediana y variables",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+La estadística permite organizar, analizar e interpretar datos. En el EXANI-II puede aparecer en problemas con tablas, listas de datos, gráficas o situaciones donde se pide encontrar promedios y medidas de tendencia central.
+
+POBLACIÓN Y MUESTRA
+
+Población:
+Es el conjunto total de elementos que se desea estudiar.
+
+Ejemplo:
+Todos los estudiantes de una preparatoria.
+
+Muestra:
+Es una parte de la población.
+
+Ejemplo:
+50 estudiantes seleccionados de esa preparatoria.
+
+VARIABLES ESTADÍSTICAS
+
+Una variable es una característica que puede cambiar.
+
+Variables cualitativas:
+Describen cualidades.
+
+Ejemplo:
+Color favorito, tipo de sangre, carrera elegida.
+
+Variables cuantitativas:
+Se expresan con números.
+
+Ejemplo:
+Edad, estatura, calificación.
+
+MEDIA
 
 La media es el promedio de un conjunto de datos.
 
 Fórmula:
-Media = suma de los datos / cantidad de datos
+
+Media = suma de datos / número de datos
 
 Ejemplo:
-2, 4, 6  
-Media = (2 + 4 + 6) / 3 = 4
 
+Datos: 6, 8, 10
+
+Media = (6 + 8 + 10) / 3 = 8
 
 MODA
 
-La moda es el número que más se repite.
+La moda es el dato que más se repite.
 
 Ejemplo:
-1, 2, 2, 3  
-Moda = 2
 
+Datos: 2, 3, 3, 4, 5
+
+Moda = 3
+
+Puede haber más de una moda o puede no haber moda.
 
 MEDIANA
 
 La mediana es el valor central cuando los datos están ordenados.
 
-Ejemplo:
-1, 3, 5  
+Ejemplo impar:
+
+1, 3, 5
+
 Mediana = 3
 
-Si hay cantidad par:
-1, 2, 3, 4  
-Mediana = (2 + 3) / 2 = 2.5
+Ejemplo par:
+
+2, 4, 6, 8
+
+Mediana = (4 + 6) / 2 = 5
+
+IMPORTANTE
+
+Antes de calcular la mediana, siempre se deben ordenar los datos.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Calcular la media de:
+
+7, 8, 9
+
+Sumamos:
+
+7 + 8 + 9 = 24
+
+Dividimos entre la cantidad de datos:
+
+24 / 3 = 8
+
+Respuesta: media = 8
 
 
-IMPORTANTE:
-- Ordena los datos antes de encontrar la mediana
-- Puede haber más de una moda
-`,
-  preguntas: [
+EJEMPLO 2
 
-    { pregunta: "¿Cuál es la media de 2, 4, 6?", opciones: ["4", "6", "3"], correcta: 0 },
-    { pregunta: "¿Cuál es la moda de 1, 2, 2, 3?", opciones: ["1", "2", "3"], correcta: 1 },
-    { pregunta: "¿Cuál es la mediana de 1, 3, 5?", opciones: ["3", "1", "5"], correcta: 0 },
-    { pregunta: "¿Cuál es la media de 3, 3, 3?", opciones: ["3", "6", "1"], correcta: 0 },
-    { pregunta: "¿Cuál es la mediana de 2, 4, 6, 8?", opciones: ["5", "4", "6"], correcta: 0 },
-    { pregunta: "¿Cuál es la moda de 5, 5, 5, 2?", opciones: ["5", "2", "No hay"], correcta: 0 },
-    { pregunta: "¿Cuál es la media de 10, 20?", opciones: ["15", "30", "10"], correcta: 0 },
-    { pregunta: "¿Qué es la moda?", opciones: ["El número que más se repite", "El promedio", "El mayor número"], correcta: 0 },
-    { pregunta: "¿Qué es la mediana?", opciones: ["El valor central", "El promedio", "La suma"], correcta: 0 },
-    { pregunta: "¿Qué debes hacer antes de sacar la mediana?", opciones: ["Ordenar datos", "Multiplicar", "Restar"], correcta: 0 }
+Encontrar la moda:
 
-  ]
-},
+4, 5, 5, 6, 7
 
-        {
-  id: "probabilidad_basica",
-  titulo: "Probabilidad básica",
-  tiempo: 200,
-  contenido: `
+El número que más se repite es 5.
+
+Respuesta: moda = 5
+
+
+EJEMPLO 3
+
+Encontrar la mediana:
+
+9, 2, 5, 7, 1
+
+Primero ordenamos:
+
+1, 2, 5, 7, 9
+
+El valor central es 5.
+
+Respuesta: mediana = 5
+
+
+EJEMPLO 4
+
+Encontrar la mediana:
+
+2, 4, 6, 8
+
+Hay dos valores centrales: 4 y 6.
+
+Promediamos:
+
+(4 + 6) / 2 = 5
+
+Respuesta: mediana = 5
+          `,
+          video: "https://www.youtube.com/results?search_query=media+moda+mediana+estadistica+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Qué es la media?", opciones: ["El promedio", "El dato más repetido", "El dato mayor"], correcta: 0 },
+          { pregunta: "¿Cuál es la media de 2, 4 y 6?", opciones: ["4", "6", "3"], correcta: 0 },
+          { pregunta: "¿Qué es la moda?", opciones: ["El dato que más se repite", "El promedio", "El dato central"], correcta: 0 },
+          { pregunta: "¿Cuál es la moda de 1, 2, 2, 3?", opciones: ["1", "2", "3"], correcta: 1 },
+          { pregunta: "¿Qué es la mediana?", opciones: ["El valor central", "El valor mayor", "La suma total"], correcta: 0 },
+          { pregunta: "¿Qué debes hacer antes de encontrar la mediana?", opciones: ["Ordenar los datos", "Multiplicar todos", "Eliminar datos"], correcta: 0 },
+          { pregunta: "¿Cuál es la mediana de 1, 3, 5?", opciones: ["3", "1", "5"], correcta: 0 },
+          { pregunta: "¿Cuál es la mediana de 2, 4, 6, 8?", opciones: ["5", "4", "6"], correcta: 0 },
+          { pregunta: "¿Qué es una muestra?", opciones: ["Parte de la población", "Toda la población", "Una fórmula"], correcta: 0 },
+          { pregunta: "¿Cuál es una variable cuantitativa?", opciones: ["Edad", "Color favorito", "Tipo de sangre"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "probabilidad_basica_fcfm",
+        titulo: "Probabilidad básica y espacio muestral",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+La probabilidad permite medir qué tan posible es que ocurra un evento. En el EXANI-II suele aparecer con dados, monedas, urnas, cartas o situaciones con resultados posibles.
+
 PROBABILIDAD
 
-La probabilidad mide qué tan posible es que ocurra un evento.
+La probabilidad se calcula con la fórmula:
 
-FÓRMULA:
+Probabilidad = casos favorables / casos posibles
 
-Probabilidad =
-Casos favorables / Casos posibles
+Casos favorables:
+Son los resultados que queremos que ocurran.
+
+Casos posibles:
+Son todos los resultados que pueden ocurrir.
 
 Ejemplo:
-En un dado hay 6 resultados posibles.
 
-Probabilidad de sacar un 3:
-1/6
+Al lanzar un dado, los posibles resultados son:
 
+1, 2, 3, 4, 5, 6
+
+Hay 6 resultados posibles.
+
+Si queremos sacar un 4, solo hay 1 caso favorable.
+
+Probabilidad = 1/6
+
+ESPACIO MUESTRAL
+
+El espacio muestral es el conjunto de todos los resultados posibles.
+
+Ejemplo:
+
+Lanzar una moneda:
+
+S = {cara, cruz}
+
+Lanzar un dado:
+
+S = {1, 2, 3, 4, 5, 6}
+
+EVENTO
+
+Un evento es un resultado o conjunto de resultados que nos interesa.
+
+Ejemplo:
+
+Evento: obtener un número par al lanzar un dado.
+
+Números pares:
+
+2, 4, 6
+
+Casos favorables = 3
+
+Casos posibles = 6
+
+Probabilidad = 3/6 = 1/2
 
 TIPOS DE EVENTOS
 
 Evento seguro:
 Siempre ocurre.
 
+Ejemplo:
+Sacar un número menor que 7 al lanzar un dado.
+
 Evento imposible:
 Nunca ocurre.
 
+Ejemplo:
+Sacar un 9 al lanzar un dado común.
+
 Evento probable:
-Puede ocurrir.
-
-
-PROBABILIDAD EN PORCENTAJE
-
-Se puede convertir a porcentaje.
+Puede ocurrir, pero no es seguro.
 
 Ejemplo:
+Sacar cara al lanzar una moneda.
+
+PROBABILIDAD COMO PORCENTAJE
+
+Una probabilidad puede expresarse como fracción, decimal o porcentaje.
+
+Ejemplo:
+
 1/2 = 0.5 = 50%
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+¿Cuál es la probabilidad de sacar un 6 en un dado?
+
+El dado tiene 6 resultados posibles.
+
+Solo hay un 6.
+
+Probabilidad = 1/6
 
 
-ESPACIO MUESTRAL
+EJEMPLO 2
 
-Es el conjunto de todos los resultados posibles.
+¿Cuál es la probabilidad de sacar un número par en un dado?
+
+Números pares:
+
+2, 4, 6
+
+Casos favorables = 3
+
+Casos posibles = 6
+
+Probabilidad = 3/6 = 1/2
+
+
+EJEMPLO 3
+
+¿Cuál es la probabilidad de sacar cara en una moneda?
+
+Resultados posibles:
+
+cara, cruz
+
+Casos favorables = 1
+
+Casos posibles = 2
+
+Probabilidad = 1/2
+
+
+EJEMPLO 4
+
+Una bolsa tiene 3 bolas rojas y 2 azules. ¿Cuál es la probabilidad de sacar una bola azul?
+
+Total de bolas:
+
+3 + 2 = 5
+
+Bolas azules = 2
+
+Probabilidad = 2/5
+          `,
+          video: "https://www.youtube.com/results?search_query=probabilidad+basica+espacio+muestral+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Cuál es la fórmula de probabilidad?", opciones: ["Casos favorables / casos posibles", "Casos posibles / casos favorables", "Suma de datos / datos"], correcta: 0 },
+          { pregunta: "¿Cuál es la probabilidad de sacar un 6 en un dado?", opciones: ["1/6", "1/2", "6/1"], correcta: 0 },
+          { pregunta: "¿Qué es el espacio muestral?", opciones: ["Todos los resultados posibles", "Solo el resultado correcto", "La respuesta final"], correcta: 0 },
+          { pregunta: "¿Cuál es el espacio muestral de una moneda?", opciones: ["{cara, cruz}", "{1,2,3}", "{rojo, azul, verde}"], correcta: 0 },
+          { pregunta: "¿Cuál es la probabilidad de sacar cara en una moneda?", opciones: ["1/2", "1/6", "2"], correcta: 0 },
+          { pregunta: "¿Cuál es la probabilidad de sacar un número par en un dado?", opciones: ["1/2", "1/6", "1/3"], correcta: 0 },
+          { pregunta: "¿Qué es un evento imposible?", opciones: ["Un evento que nunca ocurre", "Un evento que siempre ocurre", "Un evento probable"], correcta: 0 },
+          { pregunta: "¿Qué es un evento seguro?", opciones: ["Un evento que siempre ocurre", "Un evento que nunca ocurre", "Un evento con 50%"], correcta: 0 },
+          { pregunta: "¿Cuál es el porcentaje equivalente a 1/2?", opciones: ["50%", "25%", "75%"], correcta: 0 },
+          { pregunta: "Si hay 3 bolas rojas y 2 azules, ¿cuántas bolas hay en total?", opciones: ["5", "3", "2"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "conteo_combinaciones_fcfm",
+        titulo: "Técnicas de conteo, permutaciones y combinaciones",
+        tiempo: 480,
+        contenido: {
+          informacion: `
+Las técnicas de conteo ayudan a calcular cuántas formas existen de realizar una acción o formar grupos. Este tema es importante porque se relaciona con probabilidad.
+
+PRINCIPIO MULTIPLICATIVO
+
+Si una acción puede hacerse de varias formas y otra acción también, se multiplican las posibilidades.
 
 Ejemplo:
-Lanzar una moneda:
-{cara, cruz}
 
+Tienes 3 camisas y 2 pantalones.
 
-IMPORTANTE:
-La probabilidad siempre está entre 0 y 1.
-`,
-  preguntas: [
+Cada camisa puede combinarse con cada pantalón.
 
-    { pregunta: "¿Cuál es la probabilidad de sacar un 6 en un dado?", opciones: ["1/6", "1/2", "6/1"], correcta: 0 },
-    { pregunta: "¿Qué representa el espacio muestral?", opciones: ["Todos los resultados posibles", "Solo resultados correctos", "Los errores"], correcta: 0 },
-    { pregunta: "¿Cuál es la probabilidad de sacar cara en una moneda?", opciones: ["1/2", "1/6", "2"], correcta: 0 },
-    { pregunta: "¿Qué valor puede tener una probabilidad?", opciones: ["Entre 0 y 1", "Entre 1 y 10", "Negativo"], correcta: 0 },
-    { pregunta: "¿Qué es un evento imposible?", opciones: ["Nunca ocurre", "Siempre ocurre", "Ocurre dos veces"], correcta: 0 },
-    { pregunta: "¿Qué es un evento seguro?", opciones: ["Siempre ocurre", "Nunca ocurre", "Tiene 50%"], correcta: 0 },
-    { pregunta: "¿Cuál es el porcentaje equivalente a 1/2?", opciones: ["50%", "25%", "75%"], correcta: 0 },
-    { pregunta: "¿Cuántos resultados posibles tiene un dado?", opciones: ["6", "3", "12"], correcta: 0 },
-    { pregunta: "¿Cuál es la probabilidad de sacar un número par en un dado?", opciones: ["1/2", "1/6", "1/3"], correcta: 0 },
-    { pregunta: "¿Qué mide la probabilidad?", opciones: ["Qué tan posible es un evento", "La velocidad", "El peso"], correcta: 0 }
+Total de combinaciones:
 
-  ]
-},
+3 × 2 = 6
 
-        {
-  id: "conteo_combinaciones",
-  titulo: "Conteo y combinaciones",
-  tiempo: 220,
-  contenido: `
-PRINCIPIO DE CONTEO
-
-Se usa para calcular cuántas formas hay de realizar algo.
-
-Ejemplo:
-3 camisas y 2 pantalones
-
-3 × 2 = 6 combinaciones
-
-
-COMBINACIONES
-
-Se forman grupos SIN importar el orden.
-
-Ejemplo:
-Elegir 2 personas de un grupo.
-
-
-PERMUTACIONES
-
-El orden SÍ importa.
-
-Ejemplo:
-1°, 2° y 3° lugar en una carrera.
-
+Este principio se usa cuando hay eventos seguidos.
 
 DIAGRAMA DE ÁRBOL
 
-Ayuda a representar posibilidades.
+Un diagrama de árbol ayuda a representar todas las posibilidades.
 
 Ejemplo:
-Cara o cruz
-Rojo o azul
+
+Moneda y dado.
+
+Primero puede salir cara o cruz.
+
+Después puede salir 1, 2, 3, 4, 5 o 6.
+
+Total:
+
+2 × 6 = 12 resultados posibles.
+
+PERMUTACIONES
+
+Las permutaciones se usan cuando el orden sí importa.
+
+Ejemplo:
+
+Primer, segundo y tercer lugar en una carrera.
+
+No es lo mismo:
+
+Ana - Luis - Pedro
+
+que
+
+Luis - Ana - Pedro
+
+Aunque sean las mismas personas, el orden cambia.
+
+COMBINACIONES
+
+Las combinaciones se usan cuando el orden no importa.
+
+Ejemplo:
+
+Elegir 2 estudiantes para un equipo.
+
+Ana y Luis es lo mismo que Luis y Ana.
+
+Por eso el orden no cambia el grupo.
+
+DIFERENCIA IMPORTANTE
+
+Permutación:
+El orden sí importa.
+
+Combinación:
+El orden no importa.
+
+CUÁNDO USAR CONTEO
+
+Se usa en problemas donde se pregunta:
+
+- ¿Cuántas formas?
+- ¿Cuántas maneras?
+- ¿Cuántas combinaciones?
+- ¿Cuántos resultados posibles?
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Tienes 4 playeras y 3 pantalones.
+
+¿Cuántas combinaciones puedes formar?
+
+Multiplicamos:
+
+4 × 3 = 12
+
+Respuesta: 12 combinaciones
 
 
-IMPORTANTE:
-- Multiplica posibilidades cuando son eventos seguidos.
-- Las combinaciones ayudan a contar resultados posibles.
-`,
-  preguntas: [
+EJEMPLO 2
 
-    { pregunta: "Si tienes 2 camisas y 3 pantalones, ¿cuántas combinaciones hay?", opciones: ["6", "5", "3"], correcta: 0 },
-    { pregunta: "¿Qué se usa para representar posibilidades?", opciones: ["Diagrama de árbol", "Tabla periódica", "Plano cartesiano"], correcta: 0 },
-    { pregunta: "¿En qué importa el orden?", opciones: ["Permutaciones", "Combinaciones", "Fracciones"], correcta: 0 },
-    { pregunta: "¿Qué operación se usa normalmente en conteo?", opciones: ["Multiplicación", "Resta", "División"], correcta: 0 },
-    { pregunta: "¿Qué son combinaciones?", opciones: ["Grupos donde no importa el orden", "Operaciones", "Porcentajes"], correcta: 0 },
-    { pregunta: "¿Cuántas combinaciones hay con 4 playeras y 2 pantalones?", opciones: ["8", "6", "4"], correcta: 0 },
-    { pregunta: "¿Qué ayudan a calcular las permutaciones?", opciones: ["Ordenamientos", "Promedios", "Probabilidades imposibles"], correcta: 0 },
-    { pregunta: "¿Qué se hace cuando hay eventos seguidos?", opciones: ["Multiplicar posibilidades", "Restar posibilidades", "Dividir posibilidades"], correcta: 0 },
-    { pregunta: "¿Qué herramienta organiza resultados posibles?", opciones: ["Diagrama de árbol", "Calculadora", "Regla"], correcta: 0 },
-    { pregunta: "Si hay 2 opciones y luego 5, ¿cuántos resultados hay?", opciones: ["10", "7", "5"], correcta: 0 }
+Una contraseña tiene 2 dígitos. Cada dígito puede ser del 0 al 9.
 
-  ]
-}
+Hay 10 opciones para el primer dígito y 10 para el segundo.
 
-      ]
-    }
+10 × 10 = 100
 
-  ],
+Respuesta: 100 contraseñas posibles
+
+
+EJEMPLO 3
+
+¿Importa el orden en una carrera?
+
+Sí.
+
+Primer lugar y segundo lugar no son lo mismo.
+
+Entonces es permutación.
+
+
+EJEMPLO 4
+
+¿Importa el orden al elegir 2 alumnos para un equipo?
+
+No.
+
+Ana y Luis forman el mismo equipo que Luis y Ana.
+
+Entonces es combinación.
+          `,
+          video: "https://www.youtube.com/results?search_query=tecnicas+de+conteo+permutaciones+combinaciones+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "Si tienes 3 camisas y 2 pantalones, ¿cuántas combinaciones hay?", opciones: ["6", "5", "3"], correcta: 0 },
+          { pregunta: "¿Qué operación se usa en el principio multiplicativo?", opciones: ["Multiplicación", "Resta", "División"], correcta: 0 },
+          { pregunta: "¿Qué herramienta representa posibilidades paso a paso?", opciones: ["Diagrama de árbol", "Tabla periódica", "Mapa político"], correcta: 0 },
+          { pregunta: "¿Cuántos resultados hay al lanzar una moneda y un dado?", opciones: ["12", "8", "6"], correcta: 0 },
+          { pregunta: "¿Cuándo se usa permutación?", opciones: ["Cuando importa el orden", "Cuando no importa el orden", "Cuando se suman datos"], correcta: 0 },
+          { pregunta: "¿Cuándo se usa combinación?", opciones: ["Cuando no importa el orden", "Cuando importa el orden", "Cuando hay división"], correcta: 0 },
+          { pregunta: "En una carrera, ¿importa el orden de llegada?", opciones: ["Sí", "No", "Solo si hay empate"], correcta: 0 },
+          { pregunta: "Al elegir dos alumnos para un equipo, ¿importa el orden?", opciones: ["No", "Sí", "Siempre"], correcta: 0 },
+          { pregunta: "Si hay 4 playeras y 3 pantalones, ¿cuántas combinaciones hay?", opciones: ["12", "7", "9"], correcta: 0 },
+          { pregunta: "Una clave tiene 2 dígitos del 0 al 9. ¿Cuántas claves posibles hay?", opciones: ["100", "20", "10"], correcta: 0 }
+        ]
+      }
+    ]
+  }
+],
   fime: [
     // ===== ARITMÉTICA =====
   {
