@@ -158,7 +158,7 @@ Después:
 
 Respuesta: 2
           `,
-          video: "https://www.youtube.com/results?search_query=operaciones+basicas+ley+de+signos+exani+ii"
+          video: "https://www.youtube.com/watch?v=6f40XK7nssY&list=PLnA3yaozLGc4GXueyW31rCAL3MhrYhZ2i"
         },
         preguntas: [
           { pregunta: "¿Cuál es el resultado de (-4)(-3)?", opciones: ["-12", "12", "7"], correcta: 1 },
@@ -351,7 +351,7 @@ Multiplicamos denominador por denominador:
 
 Respuesta: 1/2
           `,
-          video: "https://www.youtube.com/results?search_query=fracciones+porcentajes+regla+de+tres+exani+ii"
+          video: "https://www.youtube.com/watch?v=DacM0ZJb2CA&list=PLnA3yaozLGc6iUaikrUa1JFbAGD6aaeYR"
         },
         preguntas: [
           { pregunta: "¿Cuánto es 1/2 + 1/4?", opciones: ["3/4", "2/6", "1/8"], correcta: 0 },
@@ -509,7 +509,7 @@ MCM de 4 y 6 = 12
 
 Respuesta: cada 12 segundos.
           `,
-          video: "https://www.youtube.com/results?search_query=mcm+mcd+divisibilidad+exani+ii"
+          video: "https://www.youtube.com/watch?v=2Pxsm91QiRU&list=PLnA3yaozLGc7mGAvNnvXFiGirJaN2OOUi"
         },
         preguntas: [
           { pregunta: "¿Cuál es el MCM de 4 y 6?", opciones: ["12", "24", "6"], correcta: 0 },
@@ -673,7 +673,7 @@ Promediamos:
 
 Respuesta: mediana = 5
           `,
-          video: "https://www.youtube.com/results?search_query=media+moda+mediana+estadistica+exani+ii"
+          video: "https://www.youtube.com/watch?v=dfxCsCZ1c3A&list=PLeySRPnY35dFkzBgleLJ5WVFbGdkmCik5"
         },
         preguntas: [
           { pregunta: "¿Qué es la media?", opciones: ["El promedio", "El dato más repetido", "El dato mayor"], correcta: 0 },
@@ -835,7 +835,7 @@ Bolas azules = 2
 
 Probabilidad = 2/5
           `,
-          video: "https://www.youtube.com/results?search_query=probabilidad+basica+espacio+muestral+exani+ii"
+          video: "https://www.youtube.com/watch?v=B1YE6ChdzgM&list=PLeySRPnY35dEtzvR4hUhigwTCHQcxP28l"
         },
         preguntas: [
           { pregunta: "¿Cuál es la fórmula de probabilidad?", opciones: ["Casos favorables / casos posibles", "Casos posibles / casos favorables", "Suma de datos / datos"], correcta: 0 },
@@ -984,7 +984,7 @@ Ana y Luis forman el mismo equipo que Luis y Ana.
 
 Entonces es combinación.
           `,
-          video: "https://www.youtube.com/results?search_query=tecnicas+de+conteo+permutaciones+combinaciones+exani+ii"
+          video: "https://www.youtube.com/watch?v=ibVhedcvDKs&list=PLnA3yaozLGc4tWqxe3y3Q2QO8RVixamo1"
         },
         preguntas: [
           { pregunta: "Si tienes 3 camisas y 2 pantalones, ¿cuántas combinaciones hay?", opciones: ["6", "5", "3"], correcta: 0 },
@@ -1001,322 +1001,730 @@ Entonces es combinación.
       }
     ]
   }
-],
-  fime: [
-    // ===== ARITMÉTICA =====
+],fime: [
   {
     id: "aritmetica_fime",
     nombre: "Aritmética",
     temas: [
-      
-        {
-  id: "operaciones_basicas_fime",
-  titulo: "Operaciones básicas y ley de signos",
-  tiempo: 180,
-  contenido: `
-Operaciones básicas:
-Suma, resta, multiplicación y división.
+      {
+        id: "operaciones_basicas_fime",
+        titulo: "Operaciones básicas y ley de signos",
+        tiempo: 360,
+        contenido: {
+          informacion: `
+En el EXANI-II, las operaciones básicas son fundamentales porque aparecen dentro de problemas matemáticos, de física y de razonamiento. Es importante saber resolver operaciones con números enteros, fracciones, decimales y signos.
 
-Ley de signos:
-+ × + = +
-- × - = +
-+ × - = -
-- × + = -
+OPERACIONES BÁSICAS
+
+Las operaciones básicas son:
+
+- Suma
+- Resta
+- Multiplicación
+- División
+
+Estas operaciones pueden combinarse en una misma expresión.
+
+LEY DE SIGNOS
+
+La ley de signos se usa principalmente en multiplicación y división:
+
++ por + = +
+- por - = +
++ por - = -
+- por + = -
 
 Ejemplos:
-(-3)(-2) = 6
-(-5)(2) = -10
 
-Jerarquía de operaciones:
+(-5)(-2) = 10
+
+(-4)(3) = -12
+
+(-18) ÷ 6 = -3
+
+JERARQUÍA DE OPERACIONES
+
+Cuando una expresión tiene varias operaciones, se resuelve en este orden:
+
 1. Paréntesis
-2. Potencias
+2. Potencias y raíces
 3. Multiplicación y división
 4. Suma y resta
 
 Ejemplo:
-2 + 3 × 4 = 14
-`,
-  preguntas: [
 
-    { pregunta: "¿Cuánto es (-4)(-2)?", opciones: ["-8", "8", "6"], correcta: 1 },
-    { pregunta: "¿Cuánto es (-3)(5)?", opciones: ["15", "-15", "8"], correcta: 1 },
-    { pregunta: "¿Cuánto es 6 ÷ 2?", opciones: ["3", "2", "4"], correcta: 0 },
-    { pregunta: "¿Cuánto es 2 + 3 × 4?", opciones: ["20", "14", "24"], correcta: 1 },
-    { pregunta: "¿Cuánto es (2 + 3) × 4?", opciones: ["20", "14", "10"], correcta: 0 },
-    { pregunta: "¿Cuánto es -10 + 5?", opciones: ["-5", "5", "15"], correcta: 0 },
-    { pregunta: "¿Cuánto es -6 ÷ 2?", opciones: ["-3", "3", "4"], correcta: 0 },
-    { pregunta: "¿Cuánto es (-2)^2?", opciones: ["4", "-4", "2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 8 - 3 × 2?", opciones: ["10", "2", "14"], correcta: 1 },
-    { pregunta: "¿Cuánto es 5 × 0?", opciones: ["0", "5", "1"], correcta: 0 }
+4 + 3 × 2
 
-  ]
-},
+Primero se multiplica:
+
+3 × 2 = 6
+
+Después se suma:
+
+4 + 6 = 10
+
+El resultado correcto es 10.
+
+SIGNOS DE AGRUPACIÓN
+
+Los paréntesis indican qué operación se debe resolver primero.
+
+Ejemplo:
+
+(4 + 3) × 2
+
+Primero:
+
+4 + 3 = 7
+
+Después:
+
+7 × 2 = 14
+
+POTENCIAS
+
+Una potencia indica que un número se multiplica por sí mismo.
+
+Ejemplo:
+
+3² = 3 × 3 = 9
+
+(-2)² = (-2)(-2) = 4
+
+Es importante revisar si el signo negativo está dentro del paréntesis.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Resolver:
+
+6 + 2 × 5
+
+Primero se multiplica:
+
+2 × 5 = 10
+
+Después se suma:
+
+6 + 10 = 16
+
+Respuesta: 16
+
+
+EJEMPLO 2
+
+Resolver:
+
+(6 + 2) × 5
+
+Primero se resuelve el paréntesis:
+
+6 + 2 = 8
+
+Después se multiplica:
+
+8 × 5 = 40
+
+Respuesta: 40
+
+
+EJEMPLO 3
+
+Resolver:
+
+(-7)(-3)
+
+Como negativo por negativo da positivo:
+
+(-7)(-3) = 21
+
+Respuesta: 21
+
+
+EJEMPLO 4
+
+Resolver:
+
+-12 + 5 × 2
+
+Primero se multiplica:
+
+5 × 2 = 10
+
+Después:
+
+-12 + 10 = -2
+
+Respuesta: -2
+          `,
+          video: "https://www.youtube.com/watch?v=6f40XK7nssY&list=PLnA3yaozLGc4GXueyW31rCAL3MhrYhZ2i"
+        },
+        preguntas: [
+          { pregunta: "¿Cuál es el resultado de (-5)(-2)?", opciones: ["-10", "10", "7"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de (-4)(3)?", opciones: ["12", "-12", "-1"], correcta: 1 },
+          { pregunta: "¿Qué operación se resuelve primero en 4 + 3 × 2?", opciones: ["Suma", "Multiplicación", "Resta"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de 4 + 3 × 2?", opciones: ["14", "10", "20"], correcta: 1 },
+          { pregunta: "¿Cuál es el resultado de (4 + 3) × 2?", opciones: ["14", "10", "9"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de -18 ÷ 6?", opciones: ["-3", "3", "-12"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de (-3)²?", opciones: ["9", "-9", "6"], correcta: 0 },
+          { pregunta: "¿Cuál es el resultado de 9 - 2 × 4?", opciones: ["1", "28", "7"], correcta: 0 },
+          { pregunta: "¿Qué signo tiene el resultado de negativo por positivo?", opciones: ["Positivo", "Negativo", "Cero"], correcta: 1 },
+          { pregunta: "¿Para qué sirven los paréntesis?", opciones: ["Para indicar prioridad", "Para borrar números", "Para cambiar letras"], correcta: 0 }
+        ]
+      },
 
       {
-  id: "fracciones_porcentajes_fime",
-  titulo: "Fracciones y porcentajes",
-  tiempo: 200,
-  contenido: `
+        id: "fracciones_porcentajes_fime",
+        titulo: "Fracciones, porcentajes y regla de tres",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+Las fracciones, porcentajes y proporciones son muy importantes para FIME porque aparecen en problemas de medición, física, escalas, razones y cálculos prácticos.
+
 FRACCIONES
 
 Una fracción representa una parte de un todo.
 
 Ejemplo:
-1/2 = la mitad  
-3/4 = tres partes de cuatro  
 
-OPERACIONES CON FRACCIONES
+1/2 representa una mitad.
+3/4 representa tres partes de cuatro.
 
-Suma y resta:
-Se necesita el mismo denominador.
+PARTES DE UNA FRACCIÓN
 
-Ejemplo:
-1/4 + 1/4 = 2/4 = 1/2
+Numerador:
+Número de arriba.
 
-Multiplicación:
-Se multiplica numerador con numerador y denominador con denominador.
+Denominador:
+Número de abajo.
 
 Ejemplo:
-1/2 × 3/4 = 3/8
 
-División:
-Se multiplica por el inverso.
+5/8
+
+5 es el numerador.
+8 es el denominador.
+
+SUMA Y RESTA DE FRACCIONES
+
+Si tienen el mismo denominador, se suman o restan los numeradores.
 
 Ejemplo:
-1/2 ÷ 3/4 = 1/2 × 4/3 = 4/6 = 2/3
 
+2/7 + 3/7 = 5/7
+
+Si tienen diferente denominador, se busca un denominador común.
+
+Ejemplo:
+
+1/2 + 1/3
+
+El común denominador es 6.
+
+1/2 = 3/6
+
+1/3 = 2/6
+
+3/6 + 2/6 = 5/6
+
+MULTIPLICACIÓN DE FRACCIONES
+
+Se multiplica numerador por numerador y denominador por denominador.
+
+Ejemplo:
+
+2/5 × 3/4 = 6/20 = 3/10
+
+DIVISIÓN DE FRACCIONES
+
+Se multiplica por el inverso de la segunda fracción.
+
+Ejemplo:
+
+2/3 ÷ 1/4
+
+2/3 × 4/1 = 8/3
 
 PORCENTAJES
 
-Porcentaje significa "de cada 100".
+Porcentaje significa “de cada 100”.
+
+Ejemplos:
+
+50% = 0.5 = 1/2
+
+25% = 0.25 = 1/4
+
+10% = 0.1
+
+Para sacar porcentaje:
+
+Porcentaje / 100 × cantidad
 
 Ejemplo:
-50% = 50/100 = 0.5  
-25% = 1/4  
 
-FÓRMULA:
-(Parte / Total) × 100
+30% de 200
 
-Ejemplo:
-¿Cuánto es el 20% de 50?
-(20/100) × 50 = 10
+30/100 = 0.3
 
+0.3 × 200 = 60
 
-REGLA DE 3
+REGLA DE TRES
 
-Se usa cuando hay proporciones.
+Se usa para resolver problemas de proporcionalidad.
 
 Ejemplo:
-Si 2 cuadernos cuestan $10  
-¿Cuánto cuestan 4?
 
-2 → 10  
-4 → x  
+Si 4 piezas cuestan $80, ¿cuánto cuestan 10 piezas?
 
-x = (4 × 10) / 2 = 20
-`,
-  preguntas: [
+4 → 80
+10 → x
 
-    { pregunta: "¿Cuánto es 1/2 + 1/2?", opciones: ["1", "2", "1/2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 1/2 × 3/4?", opciones: ["3/8", "3/6", "1/2"], correcta: 0 },
-    { pregunta: "¿Cuánto es 1/2 ÷ 3/4?", opciones: ["2/3", "3/2", "1/6"], correcta: 0 },
-    { pregunta: "¿Cuál es el equivalente de 50%?", opciones: ["0.5", "5", "50"], correcta: 0 },
-    { pregunta: "¿Cuánto es el 25% de 100?", opciones: ["25", "50", "75"], correcta: 0 },
-    { pregunta: "¿Cuánto es el 10% de 200?", opciones: ["10", "20", "30"], correcta: 1 },
-    { pregunta: "¿Cuánto es 3/4 en decimal?", opciones: ["0.75", "0.5", "1.25"], correcta: 0 },
-    { pregunta: "¿Cuánto es 20% de 50?", opciones: ["5", "10", "20"], correcta: 1 },
-    { pregunta: "Si 2 cuadernos cuestan 10, ¿cuánto cuestan 4?", opciones: ["20", "15", "10"], correcta: 0 },
-    { pregunta: "¿Cuál es la mitad de 80?", opciones: ["20", "40", "60"], correcta: 1 }
+x = (10 × 80) / 4
 
-  ]
-},
+x = 800 / 4
 
-        {
-  id: "mcm_mcd_fime",
-  titulo: "Mínimo Común Múltiplo y Máximo Común Divisor",
-  tiempo: 180,
-  contenido: `
-MÍNIMO COMÚN MÚLTIPLO (MCM)
+x = 200
 
-El MCM es el número más pequeño que es múltiplo de dos o más números.
+Respuesta: $200
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Resolver:
+
+1/2 + 1/3
+
+Buscamos denominador común:
+
+6
+
+1/2 = 3/6
+
+1/3 = 2/6
+
+3/6 + 2/6 = 5/6
+
+Respuesta: 5/6
+
+
+EJEMPLO 2
+
+Calcular el 30% de 200.
+
+30% = 0.3
+
+0.3 × 200 = 60
+
+Respuesta: 60
+
+
+EJEMPLO 3
+
+Si 4 piezas cuestan $80, ¿cuánto cuestan 10?
+
+4 → 80
+10 → x
+
+x = (10 × 80) / 4
+
+x = 200
+
+Respuesta: $200
+
+
+EJEMPLO 4
+
+Resolver:
+
+2/5 × 3/4
+
+2 × 3 = 6
+
+5 × 4 = 20
+
+6/20 = 3/10
+
+Respuesta: 3/10
+          `,
+      video: "https://www.youtube.com/watch?v=DacM0ZJb2CA&list=PLnA3yaozLGc6iUaikrUa1JFbAGD6aaeYR"
+        },
+        preguntas: [
+          { pregunta: "¿Cuánto es 1/2 + 1/3?", opciones: ["5/6", "2/5", "1/6"], correcta: 0 },
+          { pregunta: "¿Cuánto es 2/5 × 3/4?", opciones: ["3/10", "6/9", "5/20"], correcta: 0 },
+          { pregunta: "¿Cuánto es 2/3 ÷ 1/4?", opciones: ["8/3", "2/12", "3/8"], correcta: 0 },
+          { pregunta: "¿Cuál es el equivalente decimal de 25%?", opciones: ["0.25", "2.5", "25"], correcta: 0 },
+          { pregunta: "¿Cuánto es el 30% de 200?", opciones: ["30", "60", "90"], correcta: 1 },
+          { pregunta: "¿Cuánto es el 10% de 150?", opciones: ["15", "10", "25"], correcta: 0 },
+          { pregunta: "¿Cuánto es 1/4 en porcentaje?", opciones: ["25%", "50%", "75%"], correcta: 0 },
+          { pregunta: "Si 4 piezas cuestan 80, ¿cuánto cuestan 10?", opciones: ["200", "160", "100"], correcta: 0 },
+          { pregunta: "¿Qué significa porcentaje?", opciones: ["De cada 100", "De cada 10", "Dividir entre 2"], correcta: 0 },
+          { pregunta: "¿Para qué se usa la regla de tres?", opciones: ["Para resolver proporciones", "Para encontrar verbos", "Para medir ángulos"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "mcm_mcd_fime",
+        titulo: "MCM, MCD y divisibilidad",
+        tiempo: 360,
+        contenido: {
+          informacion: `
+El MCM, el MCD y las reglas de divisibilidad ayudan a simplificar cálculos, resolver problemas con fracciones y encontrar coincidencias entre cantidades.
+
+DIVISIBILIDAD
+
+Un número es divisible entre otro cuando la división es exacta.
 
 Ejemplo:
-Múltiplos de 4: 4, 8, 12, 16...
-Múltiplos de 6: 6, 12, 18...
 
-MCM de 4 y 6 = 12
+20 es divisible entre 5 porque:
 
+20 ÷ 5 = 4
 
-MÁXIMO COMÚN DIVISOR (MCD)
+No sobra residuo.
 
-El MCD es el número más grande que divide exactamente a dos o más números.
+REGLAS DE DIVISIBILIDAD
+
+Divisible entre 2:
+Cuando termina en número par.
 
 Ejemplo:
-Divisores de 8: 1, 2, 4, 8  
-Divisores de 12: 1, 2, 3, 4, 6, 12  
+14, 28, 100
 
-MCD de 8 y 12 = 4
+Divisible entre 3:
+Cuando la suma de sus cifras es múltiplo de 3.
+
+Ejemplo:
+
+123
+
+1 + 2 + 3 = 6
+
+Como 6 es múltiplo de 3, 123 es divisible entre 3.
+
+Divisible entre 5:
+Cuando termina en 0 o 5.
+
+Ejemplo:
+25, 50, 135
+
+MCM
+
+MCM significa Mínimo Común Múltiplo.
+
+Es el número más pequeño que es múltiplo común de dos o más números.
+
+Ejemplo:
+
+Múltiplos de 6:
+
+6, 12, 18, 24...
+
+Múltiplos de 8:
+
+8, 16, 24, 32...
+
+MCM de 6 y 8 = 24
+
+MCD
+
+MCD significa Máximo Común Divisor.
+
+Es el número más grande que divide exactamente a dos o más números.
+
+Ejemplo:
+
+Divisores de 18:
+
+1, 2, 3, 6, 9, 18
+
+Divisores de 24:
+
+1, 2, 3, 4, 6, 8, 12, 24
+
+MCD de 18 y 24 = 6
+
+USOS
+
+El MCM se usa en eventos que se repiten.
+El MCD se usa para simplificar fracciones y repartir cantidades en partes iguales.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Encontrar el MCM de 6 y 8.
+
+Múltiplos de 6:
+
+6, 12, 18, 24
+
+Múltiplos de 8:
+
+8, 16, 24
+
+El primer múltiplo común es 24.
+
+Respuesta: MCM = 24
 
 
-MÉTODO CON FACTORES PRIMOS
+EJEMPLO 2
 
-Ejemplo con 12 y 18:
+Encontrar el MCD de 18 y 24.
 
-12 = 2 × 2 × 3  
-18 = 2 × 3 × 3  
+Divisores de 18:
 
-MCM = 2 × 2 × 3 × 3 = 36  
-MCD = 2 × 3 = 6
+1, 2, 3, 6, 9, 18
+
+Divisores de 24:
+
+1, 2, 3, 4, 6, 8, 12, 24
+
+El mayor divisor común es 6.
+
+Respuesta: MCD = 6
 
 
-USOS IMPORTANTES
+EJEMPLO 3
 
-MCM:
-- Problemas de tiempo
-- Eventos que se repiten
+Simplificar 18/24.
 
-MCD:
-- Simplificar fracciones
-- Dividir en partes iguales
-`,
-  preguntas: [
+MCD de 18 y 24 = 6
 
-    { pregunta: "¿Cuál es el MCM de 4 y 6?", opciones: ["12", "24", "6"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 8 y 12?", opciones: ["2", "4", "6"], correcta: 1 },
-    { pregunta: "¿Cuál es el MCM de 3 y 5?", opciones: ["15", "8", "10"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 9 y 6?", opciones: ["3", "6", "9"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCM de 2 y 7?", opciones: ["14", "9", "7"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 10 y 5?", opciones: ["5", "10", "2"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCM de 8 y 12?", opciones: ["24", "12", "48"], correcta: 0 },
-    { pregunta: "¿Cuál es el MCD de 15 y 20?", opciones: ["5", "10", "15"], correcta: 0 },
-    { pregunta: "¿Para qué se usa el MCM?", opciones: ["Eventos que coinciden", "Dividir números", "Sumar fracciones"], correcta: 0 },
-    { pregunta: "¿Para qué se usa el MCD?", opciones: ["Simplificar", "Multiplicar", "Elevar"], correcta: 0 }
+18 ÷ 6 = 3
 
-  ]
-}
+24 ÷ 6 = 4
 
-      ]
-    
+Respuesta: 18/24 = 3/4
+
+
+EJEMPLO 4
+
+Dos máquinas se revisan cada 6 y 8 días. ¿Cada cuántos días coinciden?
+
+MCM de 6 y 8 = 24
+
+Respuesta: cada 24 días.
+          `,
+         video: "https://www.youtube.com/watch?v=2Pxsm91QiRU&list=PLnA3yaozLGc7mGAvNnvXFiGirJaN2OOUi"
+        },
+        preguntas: [
+          { pregunta: "¿Cuál es el MCM de 6 y 8?", opciones: ["24", "12", "48"], correcta: 0 },
+          { pregunta: "¿Cuál es el MCD de 18 y 24?", opciones: ["6", "12", "3"], correcta: 0 },
+          { pregunta: "¿Cuál es el MCM de 4 y 10?", opciones: ["20", "40", "10"], correcta: 0 },
+          { pregunta: "¿Cuál es el MCD de 20 y 30?", opciones: ["10", "20", "5"], correcta: 0 },
+          { pregunta: "¿Qué número es divisible entre 5?", opciones: ["45", "42", "38"], correcta: 0 },
+          { pregunta: "¿Cuándo un número es divisible entre 2?", opciones: ["Cuando termina en par", "Cuando termina en 5", "Cuando tiene decimal"], correcta: 0 },
+          { pregunta: "¿Para qué se usa el MCM?", opciones: ["Eventos que se repiten", "Puntuación", "Lectura"], correcta: 0 },
+          { pregunta: "¿Para qué se usa el MCD?", opciones: ["Simplificar fracciones", "Calcular velocidad", "Clasificar textos"], correcta: 0 },
+          { pregunta: "Simplifica 18/24 usando MCD.", opciones: ["3/4", "2/3", "6/8"], correcta: 0 },
+          { pregunta: "Si dos eventos ocurren cada 6 y 8 días, ¿cuándo coinciden?", opciones: ["Cada 24 días", "Cada 14 días", "Cada 48 días"], correcta: 0 }
+        ]
+      }
+    ]
   },
 
   {
-  id: "fisica_fime",
-  nombre: "Física",
-  temas: [
-    {
-      id: "mecanica_fime",
-      titulo: "Mecánica",
-      tiempo: 300,
-      contenido: `
-La mecánica es la rama de la física que estudia el movimiento de los cuerpos y las fuerzas que actúan sobre ellos.
+    id: "fisica_fime",
+    nombre: "Física",
+    temas: [
+      {
+        id: "mecanica_fime",
+        titulo: "Mecánica",
+        tiempo: 480,
+        contenido: {
+          informacion: `
+La mecánica es la rama de la física que estudia el movimiento de los cuerpos y las fuerzas que actúan sobre ellos. Para FIME es un tema importante porque se relaciona con movimiento, fuerza, choques, energía y cantidad de movimiento.
+
+MOVIMIENTO
+
+El movimiento ocurre cuando un cuerpo cambia de posición respecto a un punto de referencia.
+
+Ejemplo:
+
+Un automóvil que avanza en una carretera está en movimiento respecto al suelo.
+
+DISTANCIA Y DESPLAZAMIENTO
+
+Distancia:
+Es la longitud total recorrida.
+
+Desplazamiento:
+Es el cambio de posición desde el punto inicial hasta el final.
 
 VELOCIDAD
 
 La velocidad indica qué distancia recorre un cuerpo en cierto tiempo.
 
 Fórmula:
+
 v = d / t
 
-Ejemplo:
-Si un automóvil recorre 100 km en 2 horas:
-v = 100 / 2 = 50 km/h
+Donde:
 
+v = velocidad
+d = distancia
+t = tiempo
+
+Ejemplo:
+
+Si un objeto recorre 100 metros en 20 segundos:
+
+v = 100 / 20 = 5 m/s
 
 ACELERACIÓN
 
-La aceleración es el cambio de velocidad de un cuerpo en un tiempo determinado.
+La aceleración es el cambio de velocidad en un tiempo determinado.
 
 Fórmula:
+
 a = (vf - vi) / t
 
-Si un objeto aumenta su velocidad, tiene aceleración positiva.
-Si disminuye su velocidad, tiene aceleración negativa.
+Donde:
 
+vf = velocidad final
+vi = velocidad inicial
+t = tiempo
 
 FUERZA
 
 La fuerza es una acción capaz de cambiar el movimiento o la forma de un objeto.
 
 Segunda Ley de Newton:
+
 F = m × a
 
 Donde:
+
 F = fuerza
 m = masa
 a = aceleración
 
 La unidad de fuerza es el Newton (N).
 
-
-MOVIMIENTO CIRCULAR
-
-El movimiento circular ocurre cuando un objeto se mueve alrededor de un punto.
-
-La fuerza centrípeta es la fuerza que apunta hacia el centro y mantiene al objeto girando.
-
-
 CANTIDAD DE MOVIMIENTO
 
-La cantidad de movimiento relaciona la masa y la velocidad de un cuerpo.
+La cantidad de movimiento relaciona la masa y la velocidad.
 
 Fórmula:
+
 p = m × v
 
 Mientras mayor sea la masa o la velocidad, mayor será la cantidad de movimiento.
 
-
 CHOQUES
 
-Un choque ocurre cuando dos cuerpos interactúan durante poco tiempo.
+Un choque ocurre cuando dos cuerpos interactúan durante un tiempo corto.
 
-Tipos:
-- Choque elástico: se conserva la energía cinética.
-- Choque inelástico: parte de la energía se transforma en calor, sonido o deformación.
-      `,
-      preguntas: [
-        { pregunta: "¿Qué estudia la mecánica?", opciones: ["Movimiento y fuerzas", "La luz", "La escritura"], correcta: 0 },
-        { pregunta: "¿Cuál es la fórmula de la velocidad?", opciones: ["v = d / t", "F = m × a", "p = m × v"], correcta: 0 },
-        { pregunta: "¿Qué es la aceleración?", opciones: ["Cambio de velocidad", "Distancia total", "Cantidad de masa"], correcta: 0 },
-        { pregunta: "¿Cuál es la fórmula de la fuerza?", opciones: ["F = m × a", "v = d / t", "E = m × c"], correcta: 0 },
-        { pregunta: "¿Cuál es la unidad de fuerza?", opciones: ["Newton", "Metro", "Segundo"], correcta: 0 },
-        { pregunta: "¿Qué fuerza mantiene un objeto girando?", opciones: ["Fuerza centrípeta", "Fuerza eléctrica", "Fuerza normal"], correcta: 0 },
-        { pregunta: "¿Qué representa p = m × v?", opciones: ["Cantidad de movimiento", "Velocidad", "Energía potencial"], correcta: 0 },
-        { pregunta: "¿Qué ocurre en un choque?", opciones: ["Dos cuerpos interactúan", "Un cuerpo desaparece", "No hay fuerza"], correcta: 0 },
-        { pregunta: "¿Qué choque conserva la energía cinética?", opciones: ["Choque elástico", "Choque inelástico", "Choque térmico"], correcta: 0 },
-        { pregunta: "Si aumenta la masa o la velocidad, ¿qué pasa con la cantidad de movimiento?", opciones: ["Aumenta", "Disminuye", "No cambia"], correcta: 0 }
-      ]
-    },
+Choque elástico:
+Se conserva la energía cinética.
 
-    {
-      id: "movimiento_energia_fime",
-      titulo: "Movimiento circular y energía",
-      tiempo: 300,
-      contenido: `
+Choque inelástico:
+Parte de la energía se transforma en calor, sonido o deformación.
+
+MOVIMIENTO CIRCULAR
+
+Es el movimiento de un objeto alrededor de un centro.
+
+La fuerza centrípeta apunta hacia el centro y mantiene al objeto girando.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Un automóvil recorre 120 km en 2 horas.
+
+v = d / t
+
+v = 120 / 2
+
+v = 60 km/h
+
+Respuesta: 60 km/h
+
+
+EJEMPLO 2
+
+Un objeto de 5 kg tiene una aceleración de 3 m/s².
+
+F = m × a
+
+F = 5 × 3
+
+F = 15 N
+
+Respuesta: 15 N
+
+
+EJEMPLO 3
+
+Un cuerpo tiene masa de 4 kg y velocidad de 6 m/s.
+
+p = m × v
+
+p = 4 × 6
+
+p = 24 kg·m/s
+
+Respuesta: 24 kg·m/s
+
+
+EJEMPLO 4
+
+Si un objeto gira en círculo, la fuerza que apunta al centro es la fuerza centrípeta.
+          `,
+          video: "https://www.youtube.com/results?search_query=mecanica+fisica+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Qué estudia la mecánica?", opciones: ["Movimiento y fuerzas", "La luz", "La ortografía"], correcta: 0 },
+          { pregunta: "¿Cuál es la fórmula de la velocidad?", opciones: ["v = d / t", "F = m × a", "p = m × v"], correcta: 0 },
+          { pregunta: "¿Qué es la aceleración?", opciones: ["Cambio de velocidad", "Distancia total", "Cantidad de masa"], correcta: 0 },
+          { pregunta: "¿Cuál es la fórmula de la fuerza?", opciones: ["F = m × a", "v = d / t", "E = m × c"], correcta: 0 },
+          { pregunta: "¿Cuál es la unidad de fuerza?", opciones: ["Newton", "Metro", "Segundo"], correcta: 0 },
+          { pregunta: "¿Qué fuerza mantiene un objeto girando hacia el centro?", opciones: ["Fuerza centrípeta", "Fuerza eléctrica", "Fuerza normal"], correcta: 0 },
+          { pregunta: "¿Qué representa p = m × v?", opciones: ["Cantidad de movimiento", "Velocidad", "Energía potencial"], correcta: 0 },
+          { pregunta: "¿Qué ocurre en un choque?", opciones: ["Dos cuerpos interactúan", "Un cuerpo desaparece", "No hay fuerza"], correcta: 0 },
+          { pregunta: "¿Qué choque conserva la energía cinética?", opciones: ["Choque elástico", "Choque inelástico", "Choque térmico"], correcta: 0 },
+          { pregunta: "Si aumenta la masa o la velocidad, ¿qué pasa con la cantidad de movimiento?", opciones: ["Aumenta", "Disminuye", "No cambia"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "movimiento_energia_fime",
+        titulo: "Movimiento circular y energía",
+        tiempo: 480,
+        contenido: {
+          informacion: `
+El movimiento circular y la energía son temas importantes en física porque permiten explicar fenómenos como ruedas girando, ventiladores, planetas, poleas y objetos en movimiento.
+
+MOVIMIENTO CIRCULAR
+
 El movimiento circular ocurre cuando un objeto se desplaza siguiendo una trayectoria curva alrededor de un centro.
+
+Ejemplos:
+
+- Una rueda girando
+- Un ventilador
+- Un planeta orbitando
+- Una piedra atada a una cuerda girando
 
 MOVIMIENTO CIRCULAR UNIFORME
 
-En el movimiento circular uniforme, el objeto mantiene rapidez constante, pero su dirección cambia todo el tiempo.
+En el movimiento circular uniforme, el objeto mantiene rapidez constante, pero cambia continuamente de dirección.
 
-Ejemplo:
-- Una rueda girando
-- Un ventilador
-- Un planeta alrededor del Sol
-
+Aunque la rapidez sea constante, existe aceleración porque cambia la dirección del movimiento.
 
 FUERZA CENTRÍPETA
 
-Es la fuerza que apunta hacia el centro del círculo y permite que el objeto siga girando.
+La fuerza centrípeta es la fuerza que apunta hacia el centro del círculo.
 
-Si no existiera esta fuerza, el objeto seguiría en línea recta.
+Esta fuerza mantiene al objeto en movimiento circular.
 
+Si no existiera fuerza centrípeta, el objeto seguiría en línea recta.
 
 VELOCIDAD ANGULAR
 
-Indica qué tan rápido gira un objeto.
+La velocidad angular indica qué tan rápido gira un objeto.
 
 Se relaciona con el ángulo recorrido en cierto tiempo.
-
 
 ENERGÍA
 
@@ -1324,108 +1732,175 @@ La energía es la capacidad de realizar trabajo o producir cambios.
 
 ENERGÍA CINÉTICA
 
-Es la energía que tiene un cuerpo por estar en movimiento.
+La energía cinética es la energía que tiene un cuerpo por estar en movimiento.
 
 Fórmula:
+
 Ec = (m × v²) / 2
 
 Donde:
+
 Ec = energía cinética
 m = masa
 v = velocidad
 
+Si aumenta la velocidad, la energía cinética aumenta mucho porque la velocidad está elevada al cuadrado.
 
 ENERGÍA POTENCIAL
 
-Es la energía que tiene un cuerpo por su posición o altura.
+La energía potencial es la energía que tiene un cuerpo por su posición o altura.
 
 Ejemplo:
-Una pelota elevada tiene energía potencial porque puede caer.
 
+Una pelota en una repisa tiene energía potencial porque puede caer.
 
 CONSERVACIÓN DE LA ENERGÍA
 
 La energía no se crea ni se destruye, solo se transforma.
 
 Ejemplo:
-Cuando una pelota cae, su energía potencial se transforma en energía cinética.
-      `,
-      preguntas: [
-        { pregunta: "¿Qué es el movimiento circular?", opciones: ["Movimiento alrededor de un centro", "Movimiento en línea recta", "Movimiento sin dirección"], correcta: 0 },
-        { pregunta: "¿Qué mantiene un objeto girando?", opciones: ["Fuerza centrípeta", "Fuerza de fricción", "Fuerza eléctrica"], correcta: 0 },
-        { pregunta: "¿Hacia dónde apunta la fuerza centrípeta?", opciones: ["Al centro", "Hacia afuera", "Hacia arriba"], correcta: 0 },
-        { pregunta: "¿Qué es la velocidad angular?", opciones: ["Qué tan rápido gira un objeto", "Qué tan pesado es", "Qué tan alto está"], correcta: 0 },
-        { pregunta: "¿Qué es la energía cinética?", opciones: ["Energía por movimiento", "Energía por altura", "Energía por temperatura"], correcta: 0 },
-        { pregunta: "¿Cuál es la fórmula de energía cinética?", opciones: ["Ec = (m × v²) / 2", "F = m × a", "v = d / t"], correcta: 0 },
-        { pregunta: "¿Qué es la energía potencial?", opciones: ["Energía por posición o altura", "Energía por velocidad", "Energía por sonido"], correcta: 0 },
-        { pregunta: "¿Qué dice la conservación de la energía?", opciones: ["La energía se transforma", "La energía desaparece", "La energía se destruye"], correcta: 0 },
-        { pregunta: "Cuando una pelota cae, ¿qué ocurre?", opciones: ["La energía potencial se transforma en cinética", "La energía desaparece", "No hay energía"], correcta: 0 },
-        { pregunta: "¿Cuál es un ejemplo de movimiento circular?", opciones: ["Una rueda girando", "Un libro quieto", "Una regla sobre la mesa"], correcta: 0 }
-      ]
-    },
 
-    {
-      id: "optica_ondas_electromagnetismo_fime",
-      titulo: "Óptica, ondas y electromagnetismo",
-      tiempo: 320,
-      contenido: `
-Este tema estudia fenómenos relacionados con la luz, las ondas, la electricidad y el magnetismo.
+Cuando una pelota cae, su energía potencial se transforma en energía cinética.
+
+TRABAJO
+
+En física, el trabajo ocurre cuando una fuerza produce desplazamiento.
+
+Ejemplo:
+
+Empujar una caja y moverla.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Un objeto gira atado a una cuerda.
+
+La cuerda ejerce fuerza hacia el centro.
+
+Esa fuerza es centrípeta.
+
+
+EJEMPLO 2
+
+Un objeto de 2 kg se mueve a 4 m/s.
+
+Ec = (m × v²) / 2
+
+Ec = (2 × 4²) / 2
+
+Ec = (2 × 16) / 2
+
+Ec = 32 / 2
+
+Ec = 16 J
+
+Respuesta: 16 J
+
+
+EJEMPLO 3
+
+Una pelota está en una mesa alta.
+
+Tiene energía potencial por su altura.
+
+Cuando cae, esa energía se transforma en energía cinética.
+
+
+EJEMPLO 4
+
+Un ventilador girando es ejemplo de movimiento circular.
+          `,
+          video: "https://www.youtube.com/results?search_query=movimiento+circular+energia+fisica+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Qué es el movimiento circular?", opciones: ["Movimiento alrededor de un centro", "Movimiento en línea recta", "Movimiento sin dirección"], correcta: 0 },
+          { pregunta: "¿Qué fuerza mantiene un objeto girando?", opciones: ["Fuerza centrípeta", "Fuerza de fricción", "Fuerza eléctrica"], correcta: 0 },
+          { pregunta: "¿Hacia dónde apunta la fuerza centrípeta?", opciones: ["Al centro", "Hacia afuera", "Hacia arriba"], correcta: 0 },
+          { pregunta: "¿Qué es la velocidad angular?", opciones: ["Qué tan rápido gira un objeto", "Qué tan pesado es", "Qué tan alto está"], correcta: 0 },
+          { pregunta: "¿Qué es la energía cinética?", opciones: ["Energía por movimiento", "Energía por altura", "Energía por temperatura"], correcta: 0 },
+          { pregunta: "¿Cuál es la fórmula de energía cinética?", opciones: ["Ec = (m × v²) / 2", "F = m × a", "v = d / t"], correcta: 0 },
+          { pregunta: "¿Qué es la energía potencial?", opciones: ["Energía por posición o altura", "Energía por velocidad", "Energía por sonido"], correcta: 0 },
+          { pregunta: "¿Qué dice la conservación de la energía?", opciones: ["La energía se transforma", "La energía desaparece", "La energía se destruye"], correcta: 0 },
+          { pregunta: "Cuando una pelota cae, ¿qué ocurre?", opciones: ["La energía potencial se transforma en cinética", "La energía desaparece", "No hay energía"], correcta: 0 },
+          { pregunta: "¿Cuál es un ejemplo de movimiento circular?", opciones: ["Una rueda girando", "Un libro quieto", "Una regla sobre la mesa"], correcta: 0 }
+        ]
+      },
+
+      {
+        id: "optica_ondas_electromagnetismo_fime",
+        titulo: "Óptica, ondas y electromagnetismo",
+        tiempo: 520,
+        contenido: {
+          informacion: `
+Este tema estudia fenómenos relacionados con la luz, las ondas, la electricidad y el magnetismo. Es importante porque aparece en problemas conceptuales y de aplicación tecnológica.
 
 ONDAS
 
-Una onda es una perturbación que transmite energía de un lugar a otro.
+Una onda es una perturbación que transmite energía de un lugar a otro sin transportar materia de forma permanente.
 
 Ejemplos:
+
 - Sonido
 - Luz
 - Olas en el agua
-
+- Vibración de una cuerda
 
 PARTES DE UNA ONDA
 
 Cresta:
-Parte más alta de una onda.
+Parte más alta de la onda.
 
 Valle:
-Parte más baja de una onda.
+Parte más baja de la onda.
 
 Amplitud:
-Altura de la onda.
+Altura de la onda desde la posición de equilibrio.
 
 Longitud de onda:
-Distancia entre dos crestas o dos valles.
+Distancia entre dos crestas o dos valles consecutivos.
 
 Frecuencia:
 Número de ondas que pasan por un punto en un segundo.
-
 
 MOVIMIENTO ARMÓNICO SIMPLE
 
 Es un movimiento repetitivo alrededor de una posición de equilibrio.
 
 Ejemplos:
+
 - Un péndulo
 - Un resorte
 - Una cuerda vibrando
-
 
 ÓPTICA
 
 La óptica estudia la luz y sus fenómenos.
 
-Fenómenos importantes:
-- Reflexión: la luz rebota en una superficie.
-- Refracción: la luz cambia de dirección al pasar de un medio a otro.
+REFLEXIÓN
 
+La reflexión ocurre cuando la luz rebota en una superficie.
+
+Ejemplo:
+
+Un espejo refleja la luz.
+
+REFRACCIÓN
+
+La refracción ocurre cuando la luz cambia de dirección al pasar de un medio a otro.
+
+Ejemplo:
+
+Un lápiz dentro de un vaso con agua parece doblado.
 
 LENTES
 
 Las lentes modifican el paso de la luz.
 
-Tipos:
-- Convergentes: juntan los rayos de luz.
-- Divergentes: separan los rayos de luz.
+Lente convergente:
+Junta los rayos de luz.
 
+Lente divergente:
+Separa los rayos de luz.
 
 ELECTROMAGNETISMO
 
@@ -1433,212 +1908,566 @@ El electromagnetismo estudia la relación entre electricidad y magnetismo.
 
 Una corriente eléctrica puede generar un campo magnético.
 
-Los imanes producen campos magnéticos y pueden ejercer fuerzas sobre ciertos materiales.
-      `,
-      preguntas: [
-        { pregunta: "¿Qué es una onda?", opciones: ["Una perturbación que transmite energía", "Un objeto sólido", "Una fórmula matemática"], correcta: 0 },
-        { pregunta: "¿Cuál es la parte más alta de una onda?", opciones: ["Cresta", "Valle", "Centro"], correcta: 0 },
-        { pregunta: "¿Qué es la amplitud?", opciones: ["Altura de la onda", "Peso de la onda", "Velocidad de la luz"], correcta: 0 },
-        { pregunta: "¿Qué mide la frecuencia?", opciones: ["Número de ondas por segundo", "Altura de un objeto", "Masa de un cuerpo"], correcta: 0 },
-        { pregunta: "¿Qué estudia la óptica?", opciones: ["La luz", "Los números", "Las fuerzas sociales"], correcta: 0 },
-        { pregunta: "¿Qué es la reflexión?", opciones: ["La luz rebota", "La luz desaparece", "La luz se convierte en sonido"], correcta: 0 },
-        { pregunta: "¿Qué es la refracción?", opciones: ["Cambio de dirección de la luz", "Choque de dos cuerpos", "Movimiento circular"], correcta: 0 },
-        { pregunta: "¿Qué lente junta rayos de luz?", opciones: ["Convergente", "Divergente", "Plana"], correcta: 0 },
-        { pregunta: "¿Qué estudia el electromagnetismo?", opciones: ["Electricidad y magnetismo", "Historia y filosofía", "Fracciones"], correcta: 0 },
-        { pregunta: "¿Qué puede generar una corriente eléctrica?", opciones: ["Campo magnético", "Una fracción", "Una oración"], correcta: 0 }
-      ]
-    }
-  ]
-}
+Los imanes producen campos magnéticos y pueden atraer ciertos materiales.
+
+CAMPO MAGNÉTICO
+
+Es la región donde actúan fuerzas magnéticas.
+
+Ejemplo:
+
+Alrededor de un imán existe un campo magnético.
+
+APLICACIONES
+
+Estos fenómenos se aplican en:
+
+- Motores eléctricos
+- Bocinas
+- Micrófonos
+- Lentes
+- Cámaras
+- Fibra óptica
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Una onda en una cuerda tiene crestas y valles.
+
+La distancia entre dos crestas se llama longitud de onda.
+
+
+EJEMPLO 2
+
+Un espejo refleja la luz.
+
+Esto es reflexión.
+
+
+EJEMPLO 3
+
+Un popote dentro de un vaso con agua parece doblado.
+
+Esto ocurre por refracción.
+
+
+EJEMPLO 4
+
+Una corriente eléctrica puede generar un campo magnético.
+
+Por eso funcionan algunos motores eléctricos.
+
+
+EJEMPLO 5
+
+Una lupa usa una lente convergente para concentrar rayos de luz.
+          `,
+          video: "https://www.youtube.com/results?search_query=optica+ondas+electromagnetismo+fisica+exani+ii"
+        },
+        preguntas: [
+          { pregunta: "¿Qué es una onda?", opciones: ["Una perturbación que transmite energía", "Un objeto sólido", "Una fórmula matemática"], correcta: 0 },
+          { pregunta: "¿Cuál es la parte más alta de una onda?", opciones: ["Cresta", "Valle", "Centro"], correcta: 0 },
+          { pregunta: "¿Qué es la amplitud?", opciones: ["Altura de la onda", "Peso de la onda", "Velocidad de la luz"], correcta: 0 },
+          { pregunta: "¿Qué mide la frecuencia?", opciones: ["Número de ondas por segundo", "Altura de un objeto", "Masa de un cuerpo"], correcta: 0 },
+          { pregunta: "¿Qué estudia la óptica?", opciones: ["La luz", "Los números", "Las fuerzas sociales"], correcta: 0 },
+          { pregunta: "¿Qué es la reflexión?", opciones: ["La luz rebota", "La luz desaparece", "La luz se convierte en sonido"], correcta: 0 },
+          { pregunta: "¿Qué es la refracción?", opciones: ["Cambio de dirección de la luz", "Choque de dos cuerpos", "Movimiento circular"], correcta: 0 },
+          { pregunta: "¿Qué lente junta rayos de luz?", opciones: ["Convergente", "Divergente", "Plana"], correcta: 0 },
+          { pregunta: "¿Qué estudia el electromagnetismo?", opciones: ["Electricidad y magnetismo", "Historia y filosofía", "Fracciones"], correcta: 0 },
+          { pregunta: "¿Qué puede generar una corriente eléctrica?", opciones: ["Campo magnético", "Una fracción", "Una oración"], correcta: 0 }
+        ]
+      }
+    ]
+  }
 ],
 general: [
-
-  // ===== COMPRENSIÓN LECTORA =====
   {
     id: "comprension_lectora_general",
     nombre: "Comprensión Lectora",
     temas: [
-
       {
-        id: "ideas_principales",
-        titulo: "Ideas principales e inferencias",
-        tiempo: 240,
-        contenido: `
-La comprensión lectora evalúa la capacidad de entender, analizar e interpretar textos.
+        id: "ideas_inferencias_general",
+        titulo: "Ideas principales, secundarias e inferencias",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+La comprensión lectora es la capacidad de entender, interpretar y analizar un texto. En el EXANI-II no solo se pide leer, sino identificar información importante, deducir ideas y reconocer la intención del autor.
 
 IDEA PRINCIPAL
 
-Es el mensaje más importante del texto.
+La idea principal es el mensaje más importante del texto. Es aquello de lo que trata principalmente la lectura.
 
-Las ideas secundarias ayudan a explicar la idea principal.
+Puede aparecer:
+- Al inicio del texto
+- En medio
+- Al final
+- O puede estar implícita
 
+Ejemplo:
+Si un texto habla de los beneficios de estudiar con anticipación, la idea principal puede ser:
 
-INFERENCIAS
+“Estudiar con tiempo mejora la preparación para un examen.”
 
-Inferir significa obtener información que no aparece directamente escrita, usando pistas del texto.
+IDEAS SECUNDARIAS
 
+Las ideas secundarias explican, amplían o apoyan la idea principal.
+
+Ejemplo:
+Si la idea principal es que estudiar con tiempo ayuda al aprendizaje, una idea secundaria puede ser:
+
+“Organizar horarios permite repasar mejor los temas.”
+
+INFERENCIA
+
+Inferir significa deducir información que no aparece escrita directamente, pero que se puede entender por las pistas del texto.
+
+Ejemplo:
+Texto:
+“Juan llegó empapado a la escuela y olvidó su paraguas.”
+
+Inferencia:
+Probablemente estaba lloviendo.
+
+INTENCIÓN DEL AUTOR
+
+Es el propósito con el que fue escrito el texto.
+
+Puede ser:
+- Informar
+- Explicar
+- Convencer
+- Narrar
+- Describir
 
 TIPOS DE TEXTO
 
-- Narrativo
-- Descriptivo
-- Expositivo
-- Argumentativo
+Narrativo:
+Cuenta hechos o historias.
 
+Descriptivo:
+Describe personas, lugares, objetos o situaciones.
 
-CONSEJOS
+Expositivo:
+Explica información de forma clara.
 
-- Lee con atención.
+Argumentativo:
+Defiende una opinión con razones.
+
+CONSEJOS PARA EL EXAMEN
+
+- Lee primero la pregunta.
 - Identifica palabras clave.
-- Relaciona ideas.
-- Analiza el contexto.
-        `,
+- No respondas solo por memoria.
+- Busca pistas dentro del texto.
+- Diferencia entre opinión e información.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Texto:
+“El ejercicio físico ayuda a mejorar la salud, fortalece los músculos y reduce el estrés.”
+
+Pregunta:
+¿Cuál es la idea principal?
+
+Respuesta:
+El ejercicio físico ayuda a mejorar la salud.
+
+
+EJEMPLO 2
+
+Texto:
+“María estudió toda la semana. El día del examen se veía tranquila y segura.”
+
+Pregunta:
+¿Qué se puede inferir?
+
+Respuesta:
+María se preparó bien para el examen.
+
+
+EJEMPLO 3
+
+Texto:
+“Es importante reciclar porque reduce la contaminación y ayuda a cuidar los recursos naturales.”
+
+Pregunta:
+¿Cuál es la intención del autor?
+
+Respuesta:
+Convencer sobre la importancia de reciclar.
+
+
+EJEMPLO 4
+
+Texto:
+“El volcán era enorme, con una cima cubierta de nieve y nubes alrededor.”
+
+Pregunta:
+¿Qué tipo de texto es?
+
+Respuesta:
+Descriptivo.
+          `,
+          video: "https://www.youtube.com/results?search_query=comprension+lectora+exani+ii"
+        },
         preguntas: [
-
-          { pregunta: "¿Qué es la idea principal?", opciones: ["La idea más importante", "El título", "La última oración"], correcta: 0 },
-          { pregunta: "¿Qué hacen las ideas secundarias?", opciones: ["Explican la idea principal", "Cambian el tema", "Eliminan información"], correcta: 0 },
-          { pregunta: "¿Qué significa inferir?", opciones: ["Deducir información", "Copiar texto", "Memorizar"], correcta: 0 },
-          { pregunta: "¿Qué tipo de texto cuenta una historia?", opciones: ["Narrativo", "Expositivo", "Descriptivo"], correcta: 0 },
-          { pregunta: "¿Qué ayuda a comprender un texto?", opciones: ["Palabras clave", "Ignorar párrafos", "Leer rápido"], correcta: 0 },
-          { pregunta: "¿Qué evalúa la comprensión lectora?", opciones: ["Entender textos", "Resolver ecuaciones", "Memorizar fechas"], correcta: 0 },
+          { pregunta: "¿Qué es la idea principal de un texto?", opciones: ["El mensaje más importante", "Una palabra difícil", "El último párrafo siempre"], correcta: 0 },
+          { pregunta: "¿Qué hacen las ideas secundarias?", opciones: ["Apoyan la idea principal", "Contradicen siempre al autor", "Eliminan información"], correcta: 0 },
+          { pregunta: "¿Qué significa inferir?", opciones: ["Deducir información con pistas", "Copiar una oración", "Leer más rápido"], correcta: 0 },
+          { pregunta: "¿Cuál puede ser la intención de un autor?", opciones: ["Informar o convencer", "Solo entretener", "Siempre confundir"], correcta: 0 },
+          { pregunta: "¿Qué tipo de texto cuenta una historia?", opciones: ["Narrativo", "Expositivo", "Argumentativo"], correcta: 0 },
+          { pregunta: "¿Qué tipo de texto defiende una opinión?", opciones: ["Argumentativo", "Descriptivo", "Narrativo"], correcta: 0 },
           { pregunta: "¿Qué tipo de texto explica información?", opciones: ["Expositivo", "Narrativo", "Poético"], correcta: 0 },
-          { pregunta: "¿Qué debe hacer el lector?", opciones: ["Analizar el contexto", "Ignorar detalles", "Solo leer títulos"], correcta: 0 },
-          { pregunta: "¿Qué es una inferencia?", opciones: ["Conclusión basada en pistas", "Opinión personal", "Resumen"], correcta: 0 },
-          { pregunta: "¿Qué ayuda a identificar la idea principal?", opciones: ["Relacionar ideas", "Leer solo el inicio", "Contar palabras"], correcta: 0 }
-
+          { pregunta: "¿Qué ayuda a encontrar la respuesta correcta?", opciones: ["Buscar pistas en el texto", "Responder al azar", "Leer solo el título"], correcta: 0 },
+          { pregunta: "Si un texto describe un lugar, ¿qué tipo de texto es?", opciones: ["Descriptivo", "Argumentativo", "Instructivo"], correcta: 0 },
+          { pregunta: "¿Qué se debe identificar al leer?", opciones: ["Palabras clave", "Solo signos de puntuación", "El número de letras"], correcta: 0 }
         ]
       }
-
     ]
   },
 
-  // ===== REDACCIÓN INDIRECTA =====
   {
     id: "redaccion_indirecta_general",
     nombre: "Redacción Indirecta",
     temas: [
-
       {
-        id: "ortografia_coherencia",
-        titulo: "Ortografía y coherencia",
-        tiempo: 240,
-        contenido: `
-La redacción indirecta evalúa el uso correcto del lenguaje escrito.
-
-ORTOGRAFÍA
-
-Consiste en escribir correctamente las palabras.
-
-Ejemplos:
-- Haber
-- Porque
-- También
-
+        id: "coherencia_ortografia_general",
+        titulo: "Coherencia, cohesión, ortografía y puntuación",
+        tiempo: 420,
+        contenido: {
+          informacion: `
+La redacción indirecta evalúa el uso correcto del lenguaje escrito. En el EXANI-II puede aparecer con preguntas donde se debe elegir la mejor forma de escribir una oración, corregir errores o mejorar un párrafo.
 
 COHERENCIA
 
-La coherencia permite que las ideas tengan sentido y estén conectadas.
+La coherencia significa que las ideas de un texto tengan sentido y se relacionen entre sí.
 
+Un texto coherente:
+- Tiene orden lógico
+- No cambia de tema sin razón
+- Presenta ideas claras
+- Mantiene relación entre sus partes
+
+Ejemplo incorrecto:
+“Me gusta estudiar matemáticas. El perro corre rápido. Por eso aprobé el examen.”
+
+No es coherente porque las ideas no se relacionan.
+
+Ejemplo correcto:
+“Me gusta estudiar matemáticas. Practico ejercicios todos los días. Por eso mejoré mi calificación.”
 
 COHESIÓN
 
-La cohesión usa conectores para unir ideas.
+La cohesión es la unión entre ideas usando palabras adecuadas.
+
+Se logra con conectores.
+
+Conectores comunes:
+
+Adición:
+- además
+- también
+- asimismo
+
+Contraste:
+- pero
+- sin embargo
+- aunque
+
+Consecuencia:
+- por lo tanto
+- por eso
+- en consecuencia
+
+Orden:
+- primero
+- después
+- finalmente
+
+ORTOGRAFÍA
+
+La ortografía es escribir correctamente las palabras.
 
 Ejemplos:
-- Además
-- Sin embargo
-- Por lo tanto
-
+- también
+- porque
+- haber
+- ahí
+- hay
+- ay
 
 PUNTUACIÓN
 
-Los signos de puntuación ayudan a organizar las ideas.
+Los signos de puntuación organizan las ideas.
+
+Coma:
+Separa elementos o pausas breves.
+
+Punto:
+Cierra una idea completa.
+
+Punto y coma:
+Separa ideas relacionadas, pero más largas.
+
+Dos puntos:
+Introducen ejemplos o explicaciones.
+
+ACENTUACIÓN
+
+Las palabras pueden llevar tilde según su pronunciación.
 
 Ejemplos:
-- Coma
-- Punto
-- Punto y coma
-        `,
+- canción
+- árbol
+- también
+- fácil
+
+CONCORDANCIA
+
+Debe existir relación entre género y número.
+
+Ejemplo incorrecto:
+“Los alumno estudia.”
+
+Ejemplo correcto:
+“Los alumnos estudian.”
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Oración incorrecta:
+“Los estudiante estudian para el examen.”
+
+Error:
+No hay concordancia.
+
+Corrección:
+“Los estudiantes estudian para el examen.”
+
+
+EJEMPLO 2
+
+Texto:
+“Estudié toda la semana. Por eso, obtuve buena calificación.”
+
+Conector:
+“Por eso” indica consecuencia.
+
+
+EJEMPLO 3
+
+Oración:
+“Me gusta leer escribir y estudiar.”
+
+Corrección:
+“Me gusta leer, escribir y estudiar.”
+
+
+EJEMPLO 4
+
+Palabra correcta:
+
+“También”
+
+Incorrectas:
+“Tambien”
+“Tanbien”
+
+
+EJEMPLO 5
+
+Oración incorrecta:
+“Quería salir sin embargo estaba lloviendo.”
+
+Corrección:
+“Quería salir; sin embargo, estaba lloviendo.”
+          `,
+          video: "https://www.youtube.com/results?search_query=redaccion+indirecta+exani+ii"
+        },
         preguntas: [
-
-          { pregunta: "¿Qué evalúa la redacción indirecta?", opciones: ["Uso correcto del lenguaje", "Velocidad", "Fuerza"], correcta: 0 },
-          { pregunta: "¿Qué es la ortografía?", opciones: ["Escribir correctamente", "Leer rápido", "Resolver operaciones"], correcta: 0 },
-          { pregunta: "¿Qué permite la coherencia?", opciones: ["Que las ideas tengan sentido", "Que el texto sea largo", "Que no tenga puntos"], correcta: 0 },
-          { pregunta: "¿Qué une ideas en un texto?", opciones: ["Conectores", "Números", "Imágenes"], correcta: 0 },
-          { pregunta: "¿Cuál es un conector?", opciones: ["Además", "Velocidad", "Fracción"], correcta: 0 },
-          { pregunta: "¿Qué ayudan a organizar las ideas?", opciones: ["Signos de puntuación", "Colores", "Tablas"], correcta: 0 },
-          { pregunta: "¿Cuál es un signo de puntuación?", opciones: ["Coma", "Multiplicación", "Fracción"], correcta: 0 },
-          { pregunta: "¿Qué es la cohesión?", opciones: ["Conexión entre ideas", "Cantidad de texto", "Resumen"], correcta: 0 },
-          { pregunta: "¿Qué palabra está bien escrita?", opciones: ["También", "Tambien", "Tanbien"], correcta: 0 },
-          { pregunta: "¿Qué mejora un texto?", opciones: ["Coherencia y cohesión", "Más errores", "Menos ideas"], correcta: 0 }
-
+          { pregunta: "¿Qué evalúa la redacción indirecta?", opciones: ["Uso correcto del lenguaje", "Velocidad al leer", "Cálculo de áreas"], correcta: 0 },
+          { pregunta: "¿Qué es la coherencia?", opciones: ["Relación lógica entre ideas", "Uso de colores", "Cantidad de palabras"], correcta: 0 },
+          { pregunta: "¿Qué es la cohesión?", opciones: ["Unión entre ideas", "Separación de temas", "Lectura rápida"], correcta: 0 },
+          { pregunta: "¿Cuál es un conector de contraste?", opciones: ["Sin embargo", "Además", "Primero"], correcta: 0 },
+          { pregunta: "¿Cuál es un conector de consecuencia?", opciones: ["Por lo tanto", "Aunque", "También"], correcta: 0 },
+          { pregunta: "¿Qué signo separa elementos en una lista?", opciones: ["Coma", "Punto final", "Signo de interrogación"], correcta: 0 },
+          { pregunta: "¿Cuál palabra está bien escrita?", opciones: ["También", "Tambien", "Tanbien"], correcta: 0 },
+          { pregunta: "¿Cuál oración tiene concordancia correcta?", opciones: ["Los alumnos estudian", "Los alumno estudian", "Los alumnos estudia"], correcta: 0 },
+          { pregunta: "¿Qué hace el punto?", opciones: ["Cierra una idea completa", "Une números", "Elimina palabras"], correcta: 0 },
+          { pregunta: "¿Qué palabra completa mejor: 'Estudié, ___ aprobé'?", opciones: ["por eso", "aunque", "pero"], correcta: 0 }
         ]
       }
-
     ]
   },
 
-  // ===== PENSAMIENTO MATEMÁTICO =====
   {
     id: "pensamiento_matematico_general",
     nombre: "Pensamiento Matemático",
     temas: [
-
       {
-        id: "razonamiento_logico",
-        titulo: "Razonamiento lógico",
-        tiempo: 260,
-        contenido: `
-El pensamiento matemático evalúa la capacidad para resolver problemas usando lógica y razonamiento.
+        id: "razonamiento_problemas_general",
+        titulo: "Razonamiento lógico, patrones y problemas matemáticos",
+        tiempo: 480,
+        contenido: {
+          informacion: `
+El pensamiento matemático evalúa la capacidad para resolver problemas usando lógica, operaciones básicas, patrones, proporciones y análisis de información.
 
-PATRONES
+En el EXANI-II no siempre se trata de aplicar una fórmula directa. Muchas veces primero se debe entender el problema, identificar los datos importantes y elegir la operación correcta.
 
-Los patrones son secuencias que siguen una regla.
+RAZONAMIENTO LÓGICO
+
+Es la habilidad para analizar información y llegar a una conclusión correcta.
 
 Ejemplo:
-2, 4, 6, 8...
+Si todos los alumnos que estudian aprueban y Ana estudió, entonces Ana tiene mayor probabilidad de aprobar.
 
+PATRONES NUMÉRICOS
 
-PROBLEMAS MATEMÁTICOS
+Un patrón es una secuencia que sigue una regla.
 
-Es importante:
-- Analizar datos
-- Identificar operaciones
-- Resolver paso a paso
+Ejemplo:
 
+2, 4, 6, 8, 10
 
-RAZONAMIENTO
+La regla es sumar 2.
 
-El razonamiento lógico permite llegar a conclusiones correctas.
+Otro ejemplo:
 
+3, 6, 12, 24
+
+La regla es multiplicar por 2.
 
 OPERACIONES BÁSICAS
+
+Las operaciones principales son:
 
 - Suma
 - Resta
 - Multiplicación
 - División
 
-También pueden aparecer porcentajes, proporciones y ecuaciones simples.
-        `,
+Se usan para resolver problemas cotidianos.
+
+PROPORCIONES
+
+Una proporción compara cantidades.
+
+Ejemplo:
+
+Si 2 lápices cuestan $10, entonces 4 lápices cuestan $20.
+
+PORCENTAJES
+
+Un porcentaje representa una cantidad de cada 100.
+
+Ejemplo:
+
+25% = 25/100 = 0.25
+
+25% de 80 = 20
+
+ECUACIONES SIMPLES
+
+Una ecuación tiene una incógnita.
+
+Ejemplo:
+
+x + 5 = 12
+
+Para encontrar x:
+
+x = 12 - 5
+
+x = 7
+
+ANÁLISIS DE PROBLEMAS
+
+Pasos recomendados:
+
+1. Leer el problema completo.
+2. Identificar los datos.
+3. Identificar qué se pregunta.
+4. Elegir la operación correcta.
+5. Resolver paso a paso.
+6. Revisar si la respuesta tiene sentido.
+          `,
+          ejemplo: `
+EJEMPLO 1
+
+Secuencia:
+
+5, 10, 15, 20, __
+
+La regla es sumar 5.
+
+Respuesta: 25
+
+
+EJEMPLO 2
+
+Si 3 cuadernos cuestan $45, ¿cuánto cuestan 6?
+
+3 → 45
+6 → x
+
+x = (6 × 45) / 3
+
+x = 270 / 3
+
+x = 90
+
+Respuesta: $90
+
+
+EJEMPLO 3
+
+Resolver:
+
+x + 8 = 20
+
+x = 20 - 8
+
+x = 12
+
+Respuesta: x = 12
+
+
+EJEMPLO 4
+
+Calcular el 10% de 150.
+
+10% = 0.10
+
+0.10 × 150 = 15
+
+Respuesta: 15
+
+
+EJEMPLO 5
+
+Un boleto cuesta $50. Si compro 4 boletos:
+
+50 × 4 = 200
+
+Respuesta: $200
+          `,
+          video: "https://www.youtube.com/results?search_query=pensamiento+matematico+exani+ii"
+        },
         preguntas: [
-
-          { pregunta: "¿Qué evalúa el pensamiento matemático?", opciones: ["Resolución lógica de problemas", "Memorización", "Ortografía"], correcta: 0 },
-          { pregunta: "¿Qué es un patrón?", opciones: ["Secuencia con regla", "Texto largo", "Imagen"], correcta: 0 },
-          { pregunta: "¿Qué sigue en 2,4,6,8?", opciones: ["10", "12", "9"], correcta: 0 },
-          { pregunta: "¿Qué ayuda a resolver problemas?", opciones: ["Analizar datos", "Adivinar", "Ignorar operaciones"], correcta: 0 },
-          { pregunta: "¿Qué permite el razonamiento lógico?", opciones: ["Llegar a conclusiones", "Escribir poemas", "Traducir idiomas"], correcta: 0 },
-          { pregunta: "¿Cuál es una operación básica?", opciones: ["Multiplicación", "Narración", "Descripción"], correcta: 0 },
-          { pregunta: "¿Qué aparece frecuentemente en el examen?", opciones: ["Porcentajes", "Ondas electromagnéticas", "Imperialismo"], correcta: 0 },
-          { pregunta: "¿Qué se recomienda hacer al resolver problemas?", opciones: ["Resolver paso a paso", "Saltar operaciones", "Memorizar resultados"], correcta: 0 },
-          { pregunta: "¿Qué ayuda a identificar la operación correcta?", opciones: ["Analizar el problema", "Leer rápido", "Ignorar datos"], correcta: 0 },
-          { pregunta: "¿Qué usa el pensamiento matemático?", opciones: ["Lógica", "Opiniones", "Colores"], correcta: 0 }
-
+          { pregunta: "¿Qué evalúa el pensamiento matemático?", opciones: ["Resolver problemas con lógica", "Memorizar textos", "Escribir ensayos"], correcta: 0 },
+          { pregunta: "¿Qué sigue en la secuencia 2, 4, 6, 8?", opciones: ["10", "12", "9"], correcta: 0 },
+          { pregunta: "¿Qué regla sigue 3, 6, 12, 24?", opciones: ["Multiplicar por 2", "Sumar 2", "Restar 3"], correcta: 0 },
+          { pregunta: "Si x + 5 = 12, ¿cuánto vale x?", opciones: ["7", "5", "12"], correcta: 0 },
+          { pregunta: "¿Cuánto es el 25% de 80?", opciones: ["20", "25", "40"], correcta: 0 },
+          { pregunta: "Si 2 lápices cuestan 10, ¿cuánto cuestan 4?", opciones: ["20", "15", "25"], correcta: 0 },
+          { pregunta: "¿Qué se debe hacer primero al resolver un problema?", opciones: ["Leerlo completo", "Responder rápido", "Ignorar datos"], correcta: 0 },
+          { pregunta: "¿Cuál es una operación básica?", opciones: ["División", "Inferencia", "Descripción"], correcta: 0 },
+          { pregunta: "¿Qué representa un porcentaje?", opciones: ["Una cantidad de cada 100", "Una oración", "Un tipo de texto"], correcta: 0 },
+          { pregunta: "Si un boleto cuesta 50 y compras 4, ¿cuánto pagas?", opciones: ["200", "100", "150"], correcta: 0 }
         ]
       }
-
     ]
   }
-
-] 
+]
 };
