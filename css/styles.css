@@ -651,9 +651,19 @@ body {
   border: none;
 }
 
-.tema-item-btn.completado {
-  border: 2px solid #b48a72;
-  background: #fff7ef;
+/* Tema terminado: verde oscuro y letras blancas */
+.tema-item-btn.completado:not(.activo) {
+  background: #20c068b9;
+  color: white;
+  border: 2px solid #16442b;
+}
+
+/* Tema seleccionado: rojo vino, aunque ya esté completado */
+.tema-item-btn.activo,
+.tema-item-btn.completado.activo {
+  background: linear-gradient(135deg, var(--cafe), var(--vino));
+  color: var(--blanco);
+  border: none;
 }
 
 .oculto {
