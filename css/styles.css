@@ -255,6 +255,13 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   color: var(--blanco);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logo-mini:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .nav {

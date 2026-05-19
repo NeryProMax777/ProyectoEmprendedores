@@ -21,6 +21,7 @@ if (progresoQuiz[claveTema]) {
   document.getElementById("vidas").innerText = vidas;
 }
 
+
 function guardarProgresoQuiz() {
   progresoQuiz[claveTema] = {
     preguntaActual: actual,
@@ -55,6 +56,15 @@ function marcarQuizCompletado() {
   }
 
   localStorage.setItem("progresoMateria", JSON.stringify(progresoMateria));
+}
+
+function confirmarSalidaQuiz() {
+  const salir = confirm("¿Seguro que quieres salir del quiz y regresar a la página principal? Se guardará tu progreso actual.");
+
+  if (salir) {
+    guardarProgresoQuiz();
+    window.location.href = "dashboard.html";
+  }
 }
 
 function mostrarPregunta() {
@@ -134,35 +144,35 @@ function responder(i) {
     guardarProgresoQuiz();
 
     if (vidas <= 0) {
-  const panelAnimacion = document.querySelector(".animacion-panel");
+      const panelAnimacion = document.querySelector(".animacion-panel");
 
-  personaje.classList.remove("correcto", "error");
-  personaje.textContent = "😵";
-  personaje.classList.add("muriendo");
+      personaje.classList.remove("correcto", "error");
+      personaje.textContent = "😵";
+      personaje.classList.add("muriendo");
 
-  if (panelAnimacion) {
-    panelAnimacion.classList.add("game-over");
-  }
+      if (panelAnimacion) {
+        panelAnimacion.classList.add("game-over");
+      }
 
-  estadoJugador.innerText = "El jugador cayó. Perdiste tus 3 vidas.";
+      estadoJugador.innerText = "El jugador cayó. Perdiste tus 3 vidas.";
 
-  progresoQuiz[claveTema] = {
-    preguntaActual: 0,
-    vidasRestantes: 3,
-    completado: false
-  };
+      progresoQuiz[claveTema] = {
+        preguntaActual: 0,
+        vidasRestantes: 3,
+        completado: false
+      };
 
-  localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
+      localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
 
-  setTimeout(() => {
-    personaje.textContent = "💀";
-  }, 700);
+      setTimeout(() => {
+        personaje.textContent = "💀";
+      }, 700);
 
-  setTimeout(() => {
-    alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
-    window.location.href = "materia.html";
-  }, 1600);
-}
+      setTimeout(() => {
+        alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
+        window.location.href = "materia.html";
+      }, 1600);
+    }
   }
 }
 

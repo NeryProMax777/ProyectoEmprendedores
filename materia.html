@@ -10,7 +10,9 @@
 <body class="materia-body">
 
   <header class="materia-topbar">
-    <div class="logo-mini">ModuleByte</div>
+    <div class="logo-mini" id="logoInicio" onclick="window.location.href='dashboard.html'">
+    ModuleByte
+    </div>
     <button class="btn-volver" onclick="volverDashboard()">← Volver</button>
   </header>
 
@@ -159,18 +161,23 @@ let temporizadorPausado = false;
 
       guardarProgresoMateria();
 
-      if (tiempo <= 0) {
-        clearInterval(intervalo);
-        marcarTemaComoEstudiado(temaActual);
+     if (tiempo <= 0) {
+  clearInterval(intervalo);
+  marcarTemaComoEstudiado(temaActual);
 
-        const iniciar = confirm("Terminaste este tema. ¿Quieres comenzar las preguntas?");
-        if (iniciar) {
-          localStorage.setItem("temaActual", temaActual);
-          window.location.href = "quiz.html";
-        }
-      }
-    }, 1000);
+  const iniciar = confirm("Terminaste este tema. ¿Quieres comenzar las preguntas?");
+
+  if (iniciar) {
+      localStorage.setItem("temaActual", temaActual);
+      window.location.href = "quiz.html";
+    }
+      else 
+    {
+      agregarTiempoExtraAutomatico();
+    }
   }
+  }, 1000);
+}
 
   function agregarTiempo() {
     if (temaActual === null) return;
@@ -178,6 +185,16 @@ let temporizadorPausado = false;
     timer.innerText = tiempo;
     guardarProgresoMateria();
   }
+
+  function agregarTiempoExtraAutomatico() {
+   tiempo += 120; // 2 minutos
+    timer.innerText = tiempo;
+
+   guardarProgresoMateria();
+    iniciarTemporizador();
+
+   alert("Se agregaron 2 minutos extra para seguir estudiando.");
+}
 
   function comenzarQuiz() {
     if (temaActual === null) {
