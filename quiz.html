@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="quiz-body">
+  <div id="efectoRespuesta" class="efecto-respuesta"></div>
 
   <header class="quiz-topbar">
      <div class="logo-mini" id="logoInicio" onclick="confirmarSalidaQuiz()">
@@ -20,6 +21,9 @@
       </div>
       <div class="pregunta-numero">
         Pregunta <span id="contadorPregunta">1</span>
+      </div>
+      <div class="pregunta-numero">
+        Tiempo: <span id="timerPregunta">60</span>s
       </div>
     </div>
   </header>

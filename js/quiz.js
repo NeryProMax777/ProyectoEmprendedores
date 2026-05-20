@@ -1,6 +1,8 @@
 //Comentario para guardar en Git hub
 let vidas = 3;
 let actual = 0;
+let tiempoPregunta = 60;
+let intervaloPregunta = null;
 
 const idMateria = localStorage.getItem("materia");
 const temaIndex = Number(localStorage.getItem("temaActual"));
@@ -67,6 +69,78 @@ function confirmarSalidaQuiz() {
   }
 }
 
+function iniciarTemporizadorPregunta() {
+  clearInterval(intervaloPregunta);
+
+  tiempoPregunta = 60;
+  document.getElementById("timerPregunta").innerText = tiempoPregunta;
+
+  intervaloPregunta = setInterval(() => {
+    tiempoPregunta--;
+    document.getElementById("timerPregunta").innerText = tiempoPregunta;
+
+    if (tiempoPregunta <= 0) {
+      clearInterval(intervaloPregunta);
+      perderVidaPorTiempo();
+    }
+  }, 1000);
+}
+
+function perderVidaPorTiempo() {
+  vidas--;
+  document.getElementById("vidas").innerText = vidas;
+
+  estadoJugador.innerText = "Se acabó el tiempo. Perdiste una vida.";
+  animarPersonaje("error");
+
+  if (typeof mostrarEfectoRespuesta === "function") {
+    mostrarEfectoRespuesta("error");
+  }
+
+  guardarProgresoQuiz();
+
+  if (vidas <= 0) {
+    gameOverQuiz();
+  } else {
+    setTimeout(() => {
+      mostrarPregunta();
+    }, 600);
+  }
+}
+
+function gameOverQuiz() {
+  const panelAnimacion = document.querySelector(".animacion-panel");
+
+  personaje.classList.remove("correcto", "error");
+  personaje.textContent = "😵";
+  personaje.classList.add("muriendo");
+
+  if (panelAnimacion) {
+    panelAnimacion.classList.add("game-over");
+  }
+
+  estadoJugador.innerText = "El jugador cayó. Perdiste tus 3 vidas.";
+
+  progresoQuiz[claveTema] = {
+    preguntaActual: 0,
+    vidasRestantes: 3,
+    completado: false
+  };
+
+  localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
+
+  clearInterval(intervaloPregunta);
+
+  setTimeout(() => {
+    personaje.textContent = "💀";
+  }, 700);
+
+  setTimeout(() => {
+    alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
+    window.location.href = "materia.html";
+  }, 1600);
+}
+
 function mostrarPregunta() {
   if (!tema) {
     document.getElementById("pregunta").innerText = "No se encontró el tema seleccionado.";
@@ -98,33 +172,69 @@ function mostrarPregunta() {
       <button onclick="responder(${i})">${op}</button>
     `;
   });
+iniciarTemporizadorPregunta();
 }
 
+
+
 function animarPersonaje(tipo) {
-  personaje.classList.remove("correcto", "error");
+  personaje.classList.remove("correcto", "error", "muriendo");
+
   void personaje.offsetWidth;
 
   if (tipo === "correcto") {
     personaje.textContent = "🏃";
     personaje.classList.add("correcto");
+
+    setTimeout(() => {
+      personaje.classList.remove("correcto");
+      personaje.textContent = "🏃";
+    }, 500);
+
   } else {
     personaje.textContent = "💥";
     personaje.classList.add("error");
 
     setTimeout(() => {
+      personaje.classList.remove("error");
       personaje.textContent = "🏃";
     }, 500);
   }
 }
 
+function mostrarEfectoRespuesta(tipo) {
+  const efecto = document.getElementById("efectoRespuesta");
+
+  if (!efecto) return;
+
+  efecto.classList.remove("verde", "rojo");
+
+  void efecto.offsetWidth;
+
+  if (tipo === "correcto") {
+    efecto.classList.add("verde");
+  } else {
+    efecto.classList.add("rojo");
+  }
+
+  setTimeout(() => {
+    efecto.classList.remove("verde", "rojo");
+  }, 1000);
+}
+
 function responder(i) {
+  clearInterval(intervaloPregunta);
+
   if (i === preguntas[actual].correcta) {
+    mostrarEfectoRespuesta("correcto");
+
     estadoJugador.innerText = "¡Correcto! El jugador sigue avanzando.";
     animarPersonaje("correcto");
     actual++;
     guardarProgresoQuiz();
 
     if (actual >= preguntas.length) {
+      clearInterval(intervaloPregunta);
       marcarQuizCompletado();
 
       setTimeout(() => {
@@ -137,6 +247,8 @@ function responder(i) {
       }, 350);
     }
   } else {
+    mostrarEfectoRespuesta("error");
+
     vidas--;
     document.getElementById("vidas").innerText = vidas;
     estadoJugador.innerText = "Fallaste una pregunta. El jugador perdió una vida.";
@@ -144,34 +256,11 @@ function responder(i) {
     guardarProgresoQuiz();
 
     if (vidas <= 0) {
-      const panelAnimacion = document.querySelector(".animacion-panel");
-
-      personaje.classList.remove("correcto", "error");
-      personaje.textContent = "😵";
-      personaje.classList.add("muriendo");
-
-      if (panelAnimacion) {
-        panelAnimacion.classList.add("game-over");
-      }
-
-      estadoJugador.innerText = "El jugador cayó. Perdiste tus 3 vidas.";
-
-      progresoQuiz[claveTema] = {
-        preguntaActual: 0,
-        vidasRestantes: 3,
-        completado: false
-      };
-
-      localStorage.setItem("progresoQuizTema", JSON.stringify(progresoQuiz));
-
+      gameOverQuiz();
+    } else {
       setTimeout(() => {
-        personaje.textContent = "💀";
-      }, 700);
-
-      setTimeout(() => {
-        alert("Perdiste tus 3 vidas. Debes volver a estudiar este tema.");
-        window.location.href = "materia.html";
-      }, 1600);
+        mostrarPregunta();
+      }, 600);
     }
   }
 }
